@@ -42,6 +42,24 @@ To replace a PDF, upload it to `papers/`, retaining its filename to preserve exi
 
 ## Local preview and verification
 
-Serve this folder with any static HTTP server; no install or build step is required. Run `node --test tests/dashboard.test.mjs` to check Unicode preservation, import validation, link safety, publishing payloads, revision conflicts, owner checks, and content coverage.
+Serve this folder with any static HTTP server; no install or build step is required. Run `node --test tests/*.test.mjs` to check Unicode preservation, import validation, link safety, publishing payloads, revision conflicts, owner checks, and content coverage.
 
-The site publishes from the root of the `main` branch using GitHub Pages. Changes to the dashboard save `content.json` and trigger the same deployment.
+The site publishes from the root of the `main` branch using GitHub Pages. Changes to the dashboard save `content.json` and `index.html` together and trigger the same deployment.
+
+## Google search visibility
+
+The page includes a full-name search title and description, canonical URL, crawlable biography, sharing metadata, and ProfilePage/Person structured data linked to public academic profiles. `robots.txt` allows crawling and advertises `sitemap.xml`. The sitemap includes the homepage and three research PDFs; the editor has `noindex` metadata and is omitted from the sitemap.
+
+Search settings in Portfolio Studio control your public name, search title, search description, role, and research university. Dashboard publishing commits `content.json` and regenerated `index.html` in one update. It updates the HTML copy, sharing titles/descriptions, and structured data without relying on a crawler to run JavaScript. Concurrent branch changes are rejected rather than overwritten.
+
+Google controls indexing and ranking; adding metadata or a sitemap does not guarantee placement for a name search.
+
+To submit manually after ownership verification:
+
+1. Open Google Search Console and add the URL-prefix property `https://akramtaha98.github.io/`.
+2. Verify ownership using the HTML verification file or meta tag supplied by Google. Do not invent a verification token.
+3. Submit `https://akramtaha98.github.io/sitemap.xml` under Sitemaps.
+4. Inspect `https://akramtaha98.github.io/` using URL Inspection, run the live test, and choose Request indexing.
+5. If desired, add this website URL to your Google Scholar, ORCID, LinkedIn, and university profiles to connect your existing public identity with the site.
+
+Account verification and submission require authorization in the owner's Google account. No submission has been made by this update. Crawling can take days to weeks, and inclusion is not guaranteed.

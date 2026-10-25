@@ -1,3 +1,4 @@
+import {renderPublishedHTML} from '../seo.mjs';
 export const OWNER = 'Akramtaha98';
 export const REPO = 'Akramtaha98.github.io';
 export const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
@@ -27,10 +28,11 @@ export function encodeContent(content) {
   let binary = ''; for (const byte of bytes) binary += String.fromCharCode(byte);
   return btoa(binary);
 }
-export function decodeContent(base64) {
+export function decodeText(base64) {
   const bytes=Uint8Array.from(atob(base64.replace(/\s/g,'')),c=>c.charCodeAt(0));
-  return JSON.parse(new TextDecoder().decode(bytes));
+  return new TextDecoder().decode(bytes);
 }
+export function decodeContent(base64) { return JSON.parse(decodeText(base64)); }
 export class GitHubPublisher {
   #token; #fetch;
   constructor(token, transport=fetch) { this.#token=token.trim();this.#fetch=transport;if(!this.#token)throw new Error('Enter a GitHub access token to connect.'); }
@@ -51,10 +53,24 @@ export class GitHubPublisher {
     if(!repo.permissions?.push)throw new Error('This account does not have permission to update the portfolio repository.');
     return {user, file:await this.read()};
   }
-  async read(){const file=await this.request('contents/content.json?ref=main');return {sha:file.sha,content:decodeContent(file.content)};}
-  async publish(content,expectedSha,schema){
-    const clean=validateContent(content,schema),latest=await this.read();
+  async read(ref='main') {const file=await this.request(`contents/content.json?ref=${encodeURIComponent(ref)}`);return {sha:file.sha,content:decodeContent(file.content)};}
+  async publish(content,expectedSha,schema) {
+    const clean=validateContent(content,schema);
+    const head=await this.request('git/ref/heads/main');
+    const parent=head.object.sha;
+    const latest=await this.read(parent);
     if(!expectedSha || latest.sha!==expectedSha)throw new Error('The website changed since you connected. Export your draft and load the latest content before publishing.');
-    return this.request('contents/content.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Update portfolio content from dashboard',content:encodeContent(clean),sha:expectedSha,branch:'main'})});
+    const template=await this.request(`contents/index.html?ref=${encodeURIComponent(parent)}`);
+    const html=renderPublishedHTML(decodeText(template.content),clean);
+    const base=await this.request(`git/commits/${parent}`);
+    const post=(path,body)=>this.request(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const tree=await post('git/trees',{base_tree:base.tree.sha,tree:[
+      {path:'content.json',mode:'100644',type:'blob',content:JSON.stringify(clean,null,2)+'\n'},
+      {path:'index.html',mode:'100644',type:'blob',content:html}
+    ]});
+    const commit=await post('git/commits',{message:'Update portfolio content and search metadata from dashboard',tree:tree.sha,parents:[parent]});
+    await this.request('git/refs/heads/main',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({sha:commit.sha,force:false})});
+    const saved=await this.read(commit.sha);
+    return {content:{sha:saved.sha},commit};
   }
 }

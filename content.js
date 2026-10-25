@@ -3,6 +3,7 @@
   const originalKeys = new Map();
   document.querySelectorAll('[data-copy]').forEach(el => originalKeys.set(el.textContent, el.dataset.copy));
   let current = null;
+  const seoModule = import('./seo.mjs');
   const safeURL = value => {
     try { return ['https:', 'http:', 'mailto:', 'tel:'].includes(new URL(value, location.href).protocol); }
     catch { return false; }
@@ -20,6 +21,14 @@
         else el.setAttribute(property, field.value);
       });
     }
+    const title=data.fields['field-002']?.value,description=data.fields['field-001']?.value,name=data.fields['seo-name']?.value;
+    for(const tag of document.querySelectorAll('meta[property],meta[name^="twitter:"]')) {
+      const key=tag.getAttribute('property')||tag.getAttribute('name');
+      if(['og:title','twitter:title'].includes(key)&&title)tag.content=title;
+      if(['og:description','twitter:description'].includes(key)&&description)tag.content=description;
+      if(key==='og:site_name'&&name)tag.content=name;
+    }
+    seoModule.then(({profileJSON})=>{const graph=document.getElementById('profile-structured-data');if(graph)graph.textContent=profileJSON(data);}).catch(()=>{});
     document.dispatchEvent(new CustomEvent('site:content'));
   }
   window.siteFieldValue = (key, fallback) => current?.fields[key]?.value ?? fallback;

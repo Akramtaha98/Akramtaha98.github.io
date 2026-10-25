@@ -2,17 +2,17 @@
   "version": 1,
   "fields": {
     "field-001": {
-      "value": "Akram Taha Zeyad — multilingual RAG, language models, and Arabic–Malay NLP research.",
+      "value": "Akram Taha Zeyad is an AI researcher and PhD candidate at Universiti Kebangsaan Malaysia, researching multilingual RAG, Arabic and Malay NLP, and LoRA.",
       "type": "attribute",
-      "group": "General",
-      "label": "Akram Taha Zeyad — multilingual RAG, language models, and Arabic–Mal",
+      "group": "Search settings",
+      "label": "Google search description",
       "attribute": "content"
     },
     "field-002": {
-      "value": "Akram Taha Zeyad — Language, connected.",
+      "value": "Akram Taha Zeyad | AI Researcher & PhD Candidate at UKM",
       "type": "attribute",
-      "group": "General",
-      "label": "Akram Taha Zeyad — Language, connected.",
+      "group": "Search settings",
+      "label": "Google search page title",
       "attribute": "textContent"
     },
     "field-003": {
@@ -78,7 +78,7 @@
       "label": "Let’s connect"
     },
     "field-013": {
-      "value": "AKRAM TAHA ZEYAD / AI RESEARCHER",
+      "value": "PHD CANDIDATE / UNIVERSITI KEBANGSAAN MALAYSIA",
       "type": "text",
       "group": "Introduction",
       "label": "AKRAM TAHA ZEYAD / AI RESEARCHER"
@@ -1559,6 +1559,24 @@
       "type": "text",
       "group": "Interactive lab",
       "label": "Result Ms 1"
+    },
+    "seo-name": {
+      "value": "Akram Taha Zeyad",
+      "type": "text",
+      "group": "Search settings",
+      "label": "Full public name — heading and search profile"
+    },
+    "seo-role": {
+      "value": "AI Researcher, PhD Candidate and Assistant Lecturer",
+      "type": "text",
+      "group": "Search settings",
+      "label": "Professional role for search engines"
+    },
+    "seo-organization": {
+      "value": "Universiti Kebangsaan Malaysia",
+      "type": "text",
+      "group": "Search settings",
+      "label": "Research university for search engines"
     }
   }
 }
