@@ -35,7 +35,7 @@ export class GitHubPublisher {
   #token; #fetch;
   constructor(token, transport=fetch) { this.#token=token.trim();this.#fetch=transport;if(!this.#token)throw new Error('Enter a GitHub access token to connect.'); }
   async request(path,options={}) {
-    const response=await this.#fetch(path.startsWith('/')?`https://api.github.com${path}`:`${API}/${path}`,{
+    const response=await this.#fetch(path.startsWith('/')?`https://api.github.com${path}`:(path ? `${API}/${path}` : API),{
       ...options,headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',Authorization:`Bearer ${this.#token}`,...options.headers}
     });
     if(!response.ok){
