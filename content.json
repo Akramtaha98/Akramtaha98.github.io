@@ -286,7 +286,7 @@
       "label": "01 / RESEARCH DIRECTIONS"
     },
     "field-047": {
-      "value": "Three threads.",
+      "value": "Research directions.",
       "type": "text",
       "group": "Research cards",
       "label": "Three threads."
@@ -1082,7 +1082,7 @@
       "label": "Research document"
     },
     "field-177": {
-      "value": "Two research manuscripts and a PhD proposal. Manuscripts are not listed as accepted publications. Study 3 is planned; the proposal document is dated November 2026.",
+      "value": "Research manuscripts and proposals. Status labels distinguish work in progress from published work.",
       "type": "text",
       "group": "Papers",
       "label": "Two research manuscripts and a PhD proposal. Manuscripts are not lis"
@@ -1578,5 +1578,162 @@
       "group": "Search settings",
       "label": "Research university for search engines"
     }
+  },
+  "collections": {
+    "research": [
+      {
+        "id": "retrieval",
+        "title": "Understand where\ngrounding breaks.",
+        "label": "RETRIEVAL",
+        "summary": "Formalizing missing context, context noise, formatting errors, and hallucination through a systematic review and pilot experiments.",
+        "tags": "RAG, Failure taxonomy, Arabic · Malay",
+        "url": "#lab",
+        "tone": "green",
+        "visual": "retrieval",
+        "caption": "answer ↗"
+      },
+      {
+        "id": "adaptation",
+        "title": "Test the reward.\nControl the confounds.",
+        "label": "ADAPTATION",
+        "summary": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI reward effects from answer length and training machinery.",
+        "tags": "LoRA / PEFT, Qwen3 · T5Gemma 2, LLMs",
+        "url": "#lab",
+        "tone": "orange",
+        "visual": "adaptation",
+        "caption": "SMALL ADAPTERS. NEW POSSIBILITIES."
+      },
+      {
+        "id": "application",
+        "title": "Better answers.\nBeyond proxy scores.",
+        "label": "APPLICATION",
+        "summary": "Planned research on length-controlled preference optimization and robustness to noisy or missing evidence.",
+        "tags": "Planned · DPO, Retrieval robustness",
+        "url": "#publications",
+        "tone": "purple",
+        "visual": "evidence",
+        "caption": "Grounding over guesswork"
+      }
+    ],
+    "studies": [
+      {
+        "id": "review",
+        "label": "Map the failures",
+        "title": "First, understand where the system breaks.",
+        "status": "SYSTEMATIC REVIEW + PILOT EXPERIMENTS",
+        "summary": "A PRISMA-guided review of 61 studies organizes RAG failures into four groups: missing context, context noise, formatting errors, and hallucination despite retrieval. Pilot Arabic and Malay experiments help frame the next questions.",
+        "url": "papers/rag-failure-modes-systematic-review.pdf",
+        "linkLabel": "Read the review ↗"
+      },
+      {
+        "id": "controls",
+        "label": "Test the reward",
+        "title": "A stronger score is not always a better answer.",
+        "status": "CONTROLLED EXPERIMENTS · MANUSCRIPT",
+        "summary": "Five-seed experiments on Qwen3 and T5Gemma 2 isolate an NLI reward from fine-tuning and its surrounding machinery. After length matching, the reward provides no reliable additional benefit in the tested setting.",
+        "url": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+        "linkLabel": "Read the controlled study ↗"
+      },
+      {
+        "id": "next",
+        "label": "What comes next",
+        "title": "Test mitigation under imperfect evidence.",
+        "status": "PLANNED WORK · PHD PROPOSAL",
+        "summary": "The next study plans to compare length-controlled preference optimization and evidence-grounded training under distractors, missing evidence, and retrieval variation. Improved performance is a question to test, not an assumed result.",
+        "url": "papers/research-proposal-akram-taha.pdf",
+        "linkLabel": "Explore the research proposal ↗"
+      }
+    ],
+    "papers": [
+      {
+        "id": "review",
+        "title": "Formalizing Retrieval-Augmented Generation Failure Modes and LoRA-Based Mitigation: A PRISMA-Guided Systematic Review with Pilot Closed-Passage Question Answering Experiments on Arabic and Malay",
+        "status": "MANUSCRIPT · SYSTEMATIC REVIEW",
+        "summary": "A review of 61 studies, a four-part failure taxonomy, and preliminary closed-passage QA experiments. The proposed adapter mapping remains a hypothesis.",
+        "tags": "PRISMA review, RAG failure modes, Arabic · Malay",
+        "category": "nlp",
+        "url": "papers/rag-failure-modes-systematic-review.pdf",
+        "linkLabel": "Read PDF ↗",
+        "download": true,
+        "downloadLabel": "Download ↓",
+        "details": "21 pages"
+      },
+      {
+        "id": "controls",
+        "title": "An NLI Faithfulness Reward Added Nothing to LoRA Fine-Tuning of Qwen3 and T5Gemma 2 in Arabic and Malay Question Answering: A Controlled Null Result with a Length-Matched Analysis",
+        "status": "MANUSCRIPT · CONTROLLED EXPERIMENTS",
+        "summary": "A controlled five-seed study finds no reliable additional benefit from the NLI reward after length matching. The work distinguishes proxy scores from answer quality.",
+        "tags": "LoRA, Faithfulness, Controlled null result",
+        "category": "nlp",
+        "url": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+        "linkLabel": "Read PDF ↗",
+        "download": true,
+        "downloadLabel": "Download ↓",
+        "details": "57 pages"
+      },
+      {
+        "id": "proposal",
+        "title": "Proxy Validity and Controlled Mitigation in Evidence-Grounded Training for Low-Resource Multilingual Retrieval-Augmented Generation: Evidence from Arabic and Malay Question Answering",
+        "status": "PHD RESEARCH PROPOSAL · NOVEMBER 2026",
+        "summary": "Three linked studies: systematic review, controlled reward evaluation, and planned mitigation with length-controlled DPO and retrieval robustness.",
+        "tags": "PhD proposal, Proxy validity, Planned mitigation",
+        "category": "proposal",
+        "url": "papers/research-proposal-akram-taha.pdf",
+        "linkLabel": "Read PDF ↗",
+        "download": true,
+        "downloadLabel": "Download ↓",
+        "details": "50 pages"
+      }
+    ],
+    "profiles": [
+      {
+        "id": "scholar",
+        "title": "Google Scholar",
+        "summary": "Publications & citations",
+        "url": "https://scholar.google.com/citations?user=6K_BerIAAAAJ&hl=en",
+        "icon": "G",
+        "identity": true
+      },
+      {
+        "id": "linkedin",
+        "title": "LinkedIn",
+        "summary": "Professional connections",
+        "url": "https://www.linkedin.com/in/akram-t-44a095b6/",
+        "icon": "in",
+        "identity": true
+      },
+      {
+        "id": "orcid",
+        "title": "ORCID",
+        "summary": "0009-0002-4020-8060",
+        "url": "https://orcid.org/0009-0002-4020-8060",
+        "icon": "iD",
+        "identity": true
+      },
+      {
+        "id": "github",
+        "title": "GitHub",
+        "summary": "Code & experiments",
+        "url": "https://github.com/Akramtaha98",
+        "icon": "⌘",
+        "identity": true
+      },
+      {
+        "id": "researchgate",
+        "title": "ResearchGate",
+        "summary": "Research & collaboration",
+        "url": "https://www.researchgate.net/profile/Akram-Zeyad-2",
+        "icon": "R",
+        "identity": true
+      },
+      {
+        "id": "email",
+        "title": "Email",
+        "summary": "Start a conversation",
+        "url": "mailto:akram.t.zeyad@uotechnology.edu.iq",
+        "icon": "@",
+        "identity": false
+      }
+    ]
   }
 }

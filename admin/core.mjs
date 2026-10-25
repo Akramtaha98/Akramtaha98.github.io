@@ -1,4 +1,5 @@
-import {renderPublishedHTML} from '../seo.mjs?v=seo-20261026';
+import {getCollections,validateCollections,assertReady,legacyKeys} from '../collections.mjs?v=entries-20261026';
+import {renderPublishedHTML} from '../seo.mjs?v=entries-20261026';
 export const OWNER = 'Akramtaha98';
 export const REPO = 'Akramtaha98.github.io';
 export const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
@@ -7,7 +8,7 @@ export function safeURL(value) {
   try { return ['https:','http:','mailto:','tel:'].includes(new URL(value, 'https://akramtaha98.github.io/').protocol); }
   catch { return false; }
 }
-export function validateContent(candidate, schema) {
+export function validateContent(candidate, schema, options={}) {
   if (!candidate || candidate.version !== 1 || !candidate.fields || typeof candidate.fields !== 'object') throw new Error('Choose a valid portfolio content backup.');
   const keys = Object.keys(schema.fields), incoming = Object.keys(candidate.fields);
   if (keys.length !== incoming.length || incoming.some(key => !Object.hasOwn(schema.fields,key))) throw new Error('This backup does not match this version of the website.');
@@ -15,17 +16,18 @@ export function validateContent(candidate, schema) {
   for (const key of keys) {
     const base = schema.fields[key], value = candidate.fields[key]?.value;
     if (typeof value !== 'string' || value.length > 16000) throw new Error(`Invalid text in ${base.label}.`);
-    if (base.type === 'url' && !safeURL(value)) throw new Error(`Use a valid web or email link for ${base.label}.`);
+    if (base.type === 'url' && !options.draft && !safeURL(value)) throw new Error(`Use a valid web or email link for ${base.label}.`);
     clean.fields[key] = {...base,value};
   }
+  clean.collections=validateCollections(getCollections({...candidate,fields:clean.fields}),options);
   return clean;
 }
 export function restoreDraftContent(candidate,schema) {
   if(!candidate || candidate.version!==1 || !candidate.fields || typeof candidate.fields!=='object')throw new Error('Invalid saved draft.');
-  return validateContent({...candidate,fields:{...schema.fields,...candidate.fields}},schema);
+  return validateContent({...candidate,fields:{...schema.fields,...candidate.fields}},schema,{draft:true});
 }
 export function contentSignature(content) {
-  return JSON.stringify(Object.keys(content.fields).sort().map(key=>[key,content.fields[key].value]));
+  return JSON.stringify({fields:Object.keys(content.fields).filter(key=>!legacyKeys.has(key)).sort().map(key=>[key,content.fields[key].value]),collections:validateCollections(getCollections(content),{draft:true})});
 }
 export function encodeContent(content) {
   const bytes = new TextEncoder().encode(JSON.stringify(content,null,2)+'\n');
@@ -60,6 +62,7 @@ export class GitHubPublisher {
   async read(ref='main') {const file=await this.request(`contents/content.json?ref=${encodeURIComponent(ref)}`);return {sha:file.sha,content:decodeContent(file.content)};}
   async publish(content,expectedSha,schema) {
     const clean=validateContent(content,schema);
+    assertReady(clean.collections);
     const head=await this.request('git/ref/heads/main');
     const parent=head.object.sha;
     const latest=await this.read(parent);

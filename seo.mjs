@@ -1,3 +1,4 @@
+import {getCollections,renderAllCollections} from './collections.mjs?v=entries-20261026';
 export const SITE_URL = 'https://akramtaha98.github.io/';
 const value = (content,key,fallback='') => content?.fields?.[key]?.value ?? fallback;
 export function escapeHTML(text) {
@@ -5,7 +6,7 @@ export function escapeHTML(text) {
 }
 export function profileGraph(content) {
   const name=value(content,'seo-name','Akram Taha Zeyad');
-  const sameAs=[...new Set(Object.values(content.fields).filter(field=>field.group==='Profile links'&&field.type==='url'&&/^https:\/\//.test(field.value)).map(field=>field.value))];
+  const sameAs=[...new Set(getCollections(content).profiles.filter(profile=>profile.identity&&/^https:\/\//.test(profile.url)).map(profile=>profile.url))];
   return {
     '@context':'https://schema.org',
     '@graph':[
@@ -40,5 +41,5 @@ export function renderPublishedHTML(template,content) {
   });
   output=output.replace(/(<script\b[^>]*\bid="profile-structured-data"[^>]*>)[\s\S]*?(<\/script>)/,(match,start,end)=>start+profileJSON(content)+end);
   if(!output.includes('id="profile-structured-data"')||!output.includes('rel="canonical"'))throw new Error('The website SEO template is incomplete. Reload the editor after the latest deployment.');
-  return output;
+  return renderAllCollections(output,content);
 }

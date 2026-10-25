@@ -11,11 +11,19 @@ Editing dashboard: https://akramtaha98.github.io/admin/
 3. Drafts are saved in the current browser. Export a JSON backup if you want a portable copy. Importing a backup loads a draft, not a public update.
 4. Choose **Connect GitHub**, then **Publish changes**. GitHub Pages normally deploys the update within a few minutes.
 
-The dashboard edits existing text, headings, labels, profile links, PDF links, page metadata, accessibility labels, and walkthrough copy. Adding new sections, extra papers, layouts, or file uploads requires a repository change.
+Choose **Papers**, **Research cards**, **Study tabs**, or **Profile links** to manage complete entries:
+
+- Click **+ Add** to create an entry, then fill in its details.
+- Open **Edit details** to change an existing entry.
+- Use **↑ / ↓** to reorder entries or **Delete** to remove one.
+- Use **Undo entry action** to reverse an add, delete, or move before publishing.
+- For a paper, paste a PDF/DOI/website link or select an already uploaded PDF. Removing an entry keeps its file in the repository.
+
+Drafts and backups include added entries and their order. Older text-only backups are migrated automatically. New PDF uploads and layout changes still require a repository update. The dashboard also edits headings, metadata, accessibility labels, and walkthrough copy.
 
 ## Connect GitHub for publishing
 
-GitHub Pages serves static files, so it cannot store a server-side login secret. The dashboard uses GitHub's authenticated Contents API with a session-only token.
+GitHub Pages serves static files, so it cannot store a server-side login secret. The dashboard uses GitHub's authenticated Git Data API with a session-only token.
 
 1. Sign in to the **Akramtaha98** GitHub account.
 2. Open https://github.com/settings/personal-access-tokens/new and create a **fine-grained personal access token**.
