@@ -1,0 +1,60 @@
+export const OWNER = 'Akramtaha98';
+export const REPO = 'Akramtaha98.github.io';
+export const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+export function safeURL(value) {
+  if (typeof value !== 'string' || !value.trim()) return false;
+  try { return ['https:','http:','mailto:','tel:'].includes(new URL(value, 'https://akramtaha98.github.io/').protocol); }
+  catch { return false; }
+}
+export function validateContent(candidate, schema) {
+  if (!candidate || candidate.version !== 1 || !candidate.fields || typeof candidate.fields !== 'object') throw new Error('Choose a valid portfolio content backup.');
+  const keys = Object.keys(schema.fields), incoming = Object.keys(candidate.fields);
+  if (keys.length !== incoming.length || incoming.some(key => !Object.hasOwn(schema.fields,key))) throw new Error('This backup does not match this version of the website.');
+  const clean = {version:1,fields:{}};
+  for (const key of keys) {
+    const base = schema.fields[key], value = candidate.fields[key]?.value;
+    if (typeof value !== 'string' || value.length > 16000) throw new Error(`Invalid text in ${base.label}.`);
+    if (base.type === 'url' && !safeURL(value)) throw new Error(`Use a valid web or email link for ${base.label}.`);
+    clean.fields[key] = {...base,value};
+  }
+  return clean;
+}
+export function contentSignature(content) {
+  return JSON.stringify(Object.keys(content.fields).sort().map(key=>[key,content.fields[key].value]));
+}
+export function encodeContent(content) {
+  const bytes = new TextEncoder().encode(JSON.stringify(content,null,2)+'\n');
+  let binary = ''; for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary);
+}
+export function decodeContent(base64) {
+  const bytes=Uint8Array.from(atob(base64.replace(/\s/g,'')),c=>c.charCodeAt(0));
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+export class GitHubPublisher {
+  #token; #fetch;
+  constructor(token, transport=fetch) { this.#token=token.trim();this.#fetch=transport;if(!this.#token)throw new Error('Enter a GitHub access token to connect.'); }
+  async request(path,options={}) {
+    const response=await this.#fetch(path.startsWith('/')?`https://api.github.com${path}`:`${API}/${path}`,{
+      ...options,headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',Authorization:`Bearer ${this.#token}`,...options.headers}
+    });
+    if(!response.ok){
+      const messages={401:'GitHub did not accept this token. Check it or create a new one.',403:'GitHub denied access. The token needs Contents: read and write for this repository. You may also have reached a GitHub API rate limit.',404:'GitHub could not access this repository. Check the token’s selected repository.',409:'The website changed since you loaded it. Export your draft, then load the latest version before publishing.',422:'GitHub could not save this update. Reload the latest content and try again.'};
+      throw new Error(messages[response.status] || `GitHub returned ${response.status}. Please try again.`);
+    }
+    return response.json();
+  }
+  async connect() {
+    const user=await this.request('/user');
+    if(user.login.toLowerCase()!==OWNER.toLowerCase())throw new Error(`Sign in with the ${OWNER} GitHub account to publish this portfolio.`);
+    const repo=await this.request('');
+    if(!repo.permissions?.push)throw new Error('This account does not have permission to update the portfolio repository.');
+    return {user, file:await this.read()};
+  }
+  async read(){const file=await this.request('contents/content.json?ref=main');return {sha:file.sha,content:decodeContent(file.content)};}
+  async publish(content,expectedSha,schema){
+    const clean=validateContent(content,schema),latest=await this.read();
+    if(!expectedSha || latest.sha!==expectedSha)throw new Error('The website changed since you connected. Export your draft and load the latest content before publishing.');
+    return this.request('contents/content.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Update portfolio content from dashboard',content:encodeContent(clean),sha:expectedSha,branch:'main'})});
+  }
+}

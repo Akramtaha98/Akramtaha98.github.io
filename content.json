@@ -1,0 +1,1564 @@
+{
+  "version": 1,
+  "fields": {
+    "field-001": {
+      "value": "Akram Taha Zeyad — multilingual RAG, language models, and Arabic–Malay NLP research.",
+      "type": "attribute",
+      "group": "General",
+      "label": "Akram Taha Zeyad — multilingual RAG, language models, and Arabic–Mal",
+      "attribute": "content"
+    },
+    "field-002": {
+      "value": "Akram Taha Zeyad — Language, connected.",
+      "type": "attribute",
+      "group": "General",
+      "label": "Akram Taha Zeyad — Language, connected.",
+      "attribute": "textContent"
+    },
+    "field-003": {
+      "value": "at",
+      "type": "text",
+      "group": "Navigation",
+      "label": "at"
+    },
+    "field-004": {
+      "value": "Akram Taha",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Akram Taha"
+    },
+    "field-005": {
+      "value": "Open navigation",
+      "type": "attribute",
+      "group": "Navigation",
+      "label": "Open navigation",
+      "attribute": "aria-label"
+    },
+    "field-006": {
+      "value": "Main navigation",
+      "type": "attribute",
+      "group": "Navigation",
+      "label": "Main navigation",
+      "attribute": "aria-label"
+    },
+    "field-007": {
+      "value": "Research",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Research"
+    },
+    "field-008": {
+      "value": "Papers",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Papers"
+    },
+    "field-009": {
+      "value": "The lab",
+      "type": "text",
+      "group": "Navigation",
+      "label": "The lab"
+    },
+    "field-010": {
+      "value": "About",
+      "type": "text",
+      "group": "Navigation",
+      "label": "About"
+    },
+    "field-011": {
+      "value": "Profiles",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Profiles"
+    },
+    "field-012": {
+      "value": "Let’s connect",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Let’s connect"
+    },
+    "field-013": {
+      "value": "AKRAM TAHA ZEYAD / AI RESEARCHER",
+      "type": "text",
+      "group": "Introduction",
+      "label": "AKRAM TAHA ZEYAD / AI RESEARCHER"
+    },
+    "field-014": {
+      "value": "Better answers.",
+      "type": "text",
+      "group": "Introduction",
+      "label": "Better answers."
+    },
+    "field-015": {
+      "value": "Across",
+      "type": "text",
+      "group": "Introduction",
+      "label": "Across"
+    },
+    "field-016": {
+      "value": "languages.",
+      "type": "text",
+      "group": "Introduction",
+      "label": "languages."
+    },
+    "field-017": {
+      "value": "I’m Akram. I study whether evidence-grounded language models give answers that stay faithful to their evidence in Arabic and Malay. My research asks when evaluation scores reflect real improvements—and when they don’t.",
+      "type": "text",
+      "group": "Introduction",
+      "label": "I’m Akram. I study whether evidence-grounded language models give an"
+    },
+    "field-018": {
+      "value": "Explore my research",
+      "type": "text",
+      "group": "Introduction",
+      "label": "Explore my research"
+    },
+    "field-019": {
+      "value": "Akram_Taha_Zeyad_Resume.pdf",
+      "type": "url",
+      "group": "Introduction",
+      "label": "Akram_Taha_Zeyad_Resume.pdf",
+      "attribute": "href"
+    },
+    "field-020": {
+      "value": "View CV ↗",
+      "type": "text",
+      "group": "Introduction",
+      "label": "View CV ↗"
+    },
+    "field-021": {
+      "value": "BASED IN MALAYSIA",
+      "type": "text",
+      "group": "Introduction",
+      "label": "BASED IN MALAYSIA"
+    },
+    "field-022": {
+      "value": "WORKING ACROSS LANGUAGES",
+      "type": "text",
+      "group": "Introduction",
+      "label": "WORKING ACROSS LANGUAGES"
+    },
+    "field-023": {
+      "value": "AR ↔ MS ↔ EN",
+      "type": "text",
+      "group": "Introduction",
+      "label": "AR ↔ MS ↔ EN"
+    },
+    "field-024": {
+      "value": "THE MULTILINGUAL SPACE",
+      "type": "text",
+      "group": "Introduction",
+      "label": "THE MULTILINGUAL SPACE"
+    },
+    "field-025": {
+      "value": "Regenerate the language network",
+      "type": "attribute",
+      "group": "Introduction",
+      "label": "Regenerate the language network",
+      "attribute": "aria-label"
+    },
+    "field-026": {
+      "value": "Animated conceptual network connecting Arabic, Malay, and English language representations",
+      "type": "attribute",
+      "group": "Introduction",
+      "label": "Animated conceptual network connecting Arabic, Malay, and English la",
+      "attribute": "aria-label"
+    },
+    "field-027": {
+      "value": "المعرفة",
+      "type": "text",
+      "group": "Introduction",
+      "label": "المعرفة"
+    },
+    "field-028": {
+      "value": "KNOWLEDGE",
+      "type": "text",
+      "group": "Introduction",
+      "label": "KNOWLEDGE"
+    },
+    "field-029": {
+      "value": "pengetahuan",
+      "type": "text",
+      "group": "Introduction",
+      "label": "pengetahuan"
+    },
+    "field-030": {
+      "value": "KNOWLEDGE",
+      "type": "text",
+      "group": "Introduction",
+      "label": "KNOWLEDGE"
+    },
+    "field-031": {
+      "value": "knowledge",
+      "type": "text",
+      "group": "Introduction",
+      "label": "knowledge"
+    },
+    "field-032": {
+      "value": "SHARED MEANING",
+      "type": "text",
+      "group": "Introduction",
+      "label": "SHARED MEANING"
+    },
+    "field-033": {
+      "value": "DIFFERENT WORDS. SHARED UNDERSTANDING.",
+      "type": "text",
+      "group": "Introduction",
+      "label": "DIFFERENT WORDS. SHARED UNDERSTANDING."
+    },
+    "field-034": {
+      "value": "LIVE CANVAS",
+      "type": "text",
+      "group": "Introduction",
+      "label": "LIVE CANVAS"
+    },
+    "field-035": {
+      "value": "A CONCEPTUAL VIEW OF CROSS-LINGUAL RETRIEVAL",
+      "type": "text",
+      "group": "Introduction",
+      "label": "A CONCEPTUAL VIEW OF CROSS-LINGUAL RETRIEVAL"
+    },
+    "field-036": {
+      "value": "Page sections",
+      "type": "attribute",
+      "group": "General",
+      "label": "Page sections",
+      "attribute": "aria-label"
+    },
+    "field-037": {
+      "value": "01 Research",
+      "type": "text",
+      "group": "General",
+      "label": "01 Research"
+    },
+    "field-038": {
+      "value": "02 Studies",
+      "type": "text",
+      "group": "General",
+      "label": "02 Studies"
+    },
+    "field-039": {
+      "value": "03 Interactive lab",
+      "type": "text",
+      "group": "General",
+      "label": "03 Interactive lab"
+    },
+    "field-040": {
+      "value": "04 Papers",
+      "type": "text",
+      "group": "General",
+      "label": "04 Papers"
+    },
+    "field-041": {
+      "value": "05 Find me",
+      "type": "text",
+      "group": "General",
+      "label": "05 Find me"
+    },
+    "field-042": {
+      "value": "RESEARCH AT THE INTERSECTION OF",
+      "type": "text",
+      "group": "General",
+      "label": "RESEARCH AT THE INTERSECTION OF"
+    },
+    "field-043": {
+      "value": "Multilingual NLP",
+      "type": "text",
+      "group": "General",
+      "label": "Multilingual NLP"
+    },
+    "field-044": {
+      "value": "Retrieval-augmented generation",
+      "type": "text",
+      "group": "General",
+      "label": "Retrieval-augmented generation"
+    },
+    "field-045": {
+      "value": "Efficient fine-tuning",
+      "type": "text",
+      "group": "General",
+      "label": "Efficient fine-tuning"
+    },
+    "field-046": {
+      "value": "01 / RESEARCH DIRECTIONS",
+      "type": "text",
+      "group": "Research cards",
+      "label": "01 / RESEARCH DIRECTIONS"
+    },
+    "field-047": {
+      "value": "Three threads.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Three threads."
+    },
+    "field-048": {
+      "value": "One connected question.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "One connected question."
+    },
+    "field-049": {
+      "value": "When a grounding score improves, do the answers improve too? My research examines that question in Arabic and Malay.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "When a grounding score improves, do the answers improve too? My rese"
+    },
+    "field-050": {
+      "value": "01 — RETRIEVAL",
+      "type": "text",
+      "group": "Research cards",
+      "label": "01 — RETRIEVAL"
+    },
+    "field-051": {
+      "value": "سؤال",
+      "type": "text",
+      "group": "Research cards",
+      "label": "سؤال"
+    },
+    "field-052": {
+      "value": "answer ↗",
+      "type": "text",
+      "group": "Research cards",
+      "label": "answer ↗"
+    },
+    "field-053": {
+      "value": "Understand where",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Understand where"
+    },
+    "field-054": {
+      "value": "grounding breaks.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "grounding breaks."
+    },
+    "field-055": {
+      "value": "Formalizing missing context, context noise, formatting errors, and hallucination through a systematic review and pilot experiments.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Formalizing missing context, context noise, formatting errors, and h"
+    },
+    "field-056": {
+      "value": "RAG",
+      "type": "text",
+      "group": "Research cards",
+      "label": "RAG"
+    },
+    "field-057": {
+      "value": "Failure taxonomy",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Failure taxonomy"
+    },
+    "field-058": {
+      "value": "Arabic · Malay",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Arabic · Malay"
+    },
+    "field-059": {
+      "value": "02 — ADAPTATION",
+      "type": "text",
+      "group": "Research cards",
+      "label": "02 — ADAPTATION"
+    },
+    "field-060": {
+      "value": "SMALL ADAPTERS. NEW POSSIBILITIES.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "SMALL ADAPTERS. NEW POSSIBILITIES."
+    },
+    "field-061": {
+      "value": "Test the reward.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Test the reward."
+    },
+    "field-062": {
+      "value": "Control the confounds.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Control the confounds."
+    },
+    "field-063": {
+      "value": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI reward effects from answer length and training machinery.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI r"
+    },
+    "field-064": {
+      "value": "LoRA / PEFT",
+      "type": "text",
+      "group": "Research cards",
+      "label": "LoRA / PEFT"
+    },
+    "field-065": {
+      "value": "Qwen3 · T5Gemma 2",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Qwen3 · T5Gemma 2"
+    },
+    "field-066": {
+      "value": "LLMs",
+      "type": "text",
+      "group": "Research cards",
+      "label": "LLMs"
+    },
+    "field-067": {
+      "value": "03 — APPLICATION",
+      "type": "text",
+      "group": "Research cards",
+      "label": "03 — APPLICATION"
+    },
+    "field-068": {
+      "value": "EVIDENCE → ANSWER",
+      "type": "text",
+      "group": "Research cards",
+      "label": "EVIDENCE → ANSWER"
+    },
+    "field-069": {
+      "value": "Grounding over guesswork",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Grounding over guesswork"
+    },
+    "field-070": {
+      "value": "Better answers.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Better answers."
+    },
+    "field-071": {
+      "value": "Beyond proxy scores.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Beyond proxy scores."
+    },
+    "field-072": {
+      "value": "Planned research on length-controlled preference optimization and robustness to noisy or missing evidence.",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Planned research on length-controlled preference optimization and ro"
+    },
+    "field-073": {
+      "value": "Planned · DPO",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Planned · DPO"
+    },
+    "field-074": {
+      "value": "Retrieval robustness",
+      "type": "text",
+      "group": "Research cards",
+      "label": "Retrieval robustness"
+    },
+    "field-075": {
+      "value": "THE RESEARCH PROGRAMME",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "THE RESEARCH PROGRAMME"
+    },
+    "field-076": {
+      "value": "Follow the",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Follow the"
+    },
+    "field-077": {
+      "value": "question.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "question."
+    },
+    "field-078": {
+      "value": "From identifying failure modes to testing what actually changes answer quality.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "From identifying failure modes to testing what actually changes answ"
+    },
+    "field-079": {
+      "value": "Explore the research studies",
+      "type": "attribute",
+      "group": "Study tabs",
+      "label": "Explore the research studies",
+      "attribute": "aria-label"
+    },
+    "field-080": {
+      "value": "01 / Map the failures",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "01 / Map the failures"
+    },
+    "field-081": {
+      "value": "02 / Test the reward",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "02 / Test the reward"
+    },
+    "field-082": {
+      "value": "03 / What comes next",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "03 / What comes next"
+    },
+    "field-083": {
+      "value": "01",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "01"
+    },
+    "field-084": {
+      "value": "SYSTEMATIC REVIEW + PILOT EXPERIMENTS",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "SYSTEMATIC REVIEW + PILOT EXPERIMENTS"
+    },
+    "field-085": {
+      "value": "First, understand where the system breaks.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "First, understand where the system breaks."
+    },
+    "field-086": {
+      "value": "A PRISMA-guided review of 61 studies organizes RAG failures into four groups: missing context, context noise, formatting errors, and hallucination despite retrieval. Pilot Arabic and Malay experiments help frame the next questions.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "A PRISMA-guided review of 61 studies organizes RAG failures into fou"
+    },
+    "field-087": {
+      "value": "papers/rag-failure-modes-systematic-review.pdf",
+      "type": "url",
+      "group": "Study tabs",
+      "label": "papers/rag-failure-modes-systematic-review.pdf",
+      "attribute": "href"
+    },
+    "field-088": {
+      "value": "Read the review ↗",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Read the review ↗"
+    },
+    "field-089": {
+      "value": "02",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "02"
+    },
+    "field-090": {
+      "value": "CONTROLLED EXPERIMENTS · MANUSCRIPT",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "CONTROLLED EXPERIMENTS · MANUSCRIPT"
+    },
+    "field-091": {
+      "value": "A stronger score is not always a better answer.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "A stronger score is not always a better answer."
+    },
+    "field-092": {
+      "value": "Five-seed experiments on Qwen3 and T5Gemma 2 isolate an NLI reward from fine-tuning and its surrounding machinery. After length matching, the reward provides no reliable additional benefit in the tested setting.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Five-seed experiments on Qwen3 and T5Gemma 2 isolate an NLI reward f"
+    },
+    "field-093": {
+      "value": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "type": "url",
+      "group": "Study tabs",
+      "label": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "attribute": "href"
+    },
+    "field-094": {
+      "value": "Read the controlled study ↗",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Read the controlled study ↗"
+    },
+    "field-095": {
+      "value": "03",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "03"
+    },
+    "field-096": {
+      "value": "PLANNED WORK · PHD PROPOSAL",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "PLANNED WORK · PHD PROPOSAL"
+    },
+    "field-097": {
+      "value": "Test mitigation under imperfect evidence.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Test mitigation under imperfect evidence."
+    },
+    "field-098": {
+      "value": "The next study plans to compare length-controlled preference optimization and evidence-grounded training under distractors, missing evidence, and retrieval variation. Improved performance is a question to test, not an assumed result.",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "The next study plans to compare length-controlled preference optimiz"
+    },
+    "field-099": {
+      "value": "papers/research-proposal-akram-taha.pdf",
+      "type": "url",
+      "group": "Study tabs",
+      "label": "papers/research-proposal-akram-taha.pdf",
+      "attribute": "href"
+    },
+    "field-100": {
+      "value": "Explore the research proposal ↗",
+      "type": "text",
+      "group": "Study tabs",
+      "label": "Explore the research proposal ↗"
+    },
+    "field-101": {
+      "value": "02 / THE OPEN LAB",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "02 / THE OPEN LAB"
+    },
+    "field-102": {
+      "value": "Less abstract.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Less abstract."
+    },
+    "field-103": {
+      "value": "More interactive.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "More interactive."
+    },
+    "field-104": {
+      "value": "A small window into how retrieval works. Choose a language and follow a question from query to evidence.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "A small window into how retrieval works. Choose a language and follo"
+    },
+    "field-105": {
+      "value": "An illustrative walkthrough, inspired by my research. Results here are examples, not a live model.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "An illustrative walkthrough, inspired by my research. Results here a"
+    },
+    "field-106": {
+      "value": "https://github.com/Akramtaha98",
+      "type": "url",
+      "group": "Interactive lab",
+      "label": "https://github.com/Akramtaha98",
+      "attribute": "href"
+    },
+    "field-107": {
+      "value": "Explore my GitHub ↗",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Explore my GitHub ↗"
+    },
+    "field-108": {
+      "value": "RETRIEVAL EXPLORER",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "RETRIEVAL EXPLORER"
+    },
+    "field-109": {
+      "value": "DEMO / 01",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "DEMO / 01"
+    },
+    "field-110": {
+      "value": "Query language",
+      "type": "attribute",
+      "group": "Interactive lab",
+      "label": "Query language",
+      "attribute": "aria-label"
+    },
+    "field-111": {
+      "value": "English",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "English"
+    },
+    "field-112": {
+      "value": "العربية",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "العربية"
+    },
+    "field-113": {
+      "value": "Bahasa Melayu",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Bahasa Melayu"
+    },
+    "field-114": {
+      "value": "YOUR QUESTION",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "YOUR QUESTION"
+    },
+    "field-115": {
+      "value": "What is retrieval-augmented generation?",
+      "type": "attribute",
+      "group": "Interactive lab",
+      "label": "What is retrieval-augmented generation?",
+      "attribute": "value"
+    },
+    "field-116": {
+      "value": "Run illustrative retrieval",
+      "type": "attribute",
+      "group": "Interactive lab",
+      "label": "Run illustrative retrieval",
+      "attribute": "aria-label"
+    },
+    "field-117": {
+      "value": "01 Query",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "01 Query"
+    },
+    "field-118": {
+      "value": "02 Retrieve",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "02 Retrieve"
+    },
+    "field-119": {
+      "value": "03 Ground",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "03 Ground"
+    },
+    "field-120": {
+      "value": "RETRIEVED EVIDENCE",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "RETRIEVED EVIDENCE"
+    },
+    "field-121": {
+      "value": "ILLUSTRATIVE",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "ILLUSTRATIVE"
+    },
+    "field-122": {
+      "value": "01",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "01"
+    },
+    "field-123": {
+      "value": "Connect the model to external knowledge",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Connect the model to external knowledge"
+    },
+    "field-124": {
+      "value": "Retrieve relevant passages before generating a response.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Retrieve relevant passages before generating a response."
+    },
+    "field-125": {
+      "value": "02",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "02"
+    },
+    "field-126": {
+      "value": "Ground the answer in context",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Ground the answer in context"
+    },
+    "field-127": {
+      "value": "Use the retrieved evidence to support the generated answer.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Use the retrieved evidence to support the generated answer."
+    },
+    "field-128": {
+      "value": "Ready to explore · choose a language above",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Ready to explore · choose a language above"
+    },
+    "field-129": {
+      "value": "03 / WRITING & RESEARCH",
+      "type": "text",
+      "group": "Papers",
+      "label": "03 / WRITING & RESEARCH"
+    },
+    "field-130": {
+      "value": "The research.",
+      "type": "text",
+      "group": "Papers",
+      "label": "The research."
+    },
+    "field-131": {
+      "value": "Read the evidence.",
+      "type": "text",
+      "group": "Papers",
+      "label": "Read the evidence."
+    },
+    "field-132": {
+      "value": "https://scholar.google.com/citations?user=6K_BerIAAAAJ&hl=en",
+      "type": "url",
+      "group": "Papers",
+      "label": "https://scholar.google.com/citations?user=6K_BerIAAAAJ&hl=en",
+      "attribute": "href"
+    },
+    "field-133": {
+      "value": "Full publication record ↗",
+      "type": "text",
+      "group": "Papers",
+      "label": "Full publication record ↗"
+    },
+    "field-134": {
+      "value": "Filter research writing",
+      "type": "attribute",
+      "group": "Papers",
+      "label": "Filter research writing",
+      "attribute": "aria-label"
+    },
+    "field-135": {
+      "value": "All writing",
+      "type": "text",
+      "group": "Papers",
+      "label": "All writing"
+    },
+    "field-136": {
+      "value": "Language & NLP",
+      "type": "text",
+      "group": "Papers",
+      "label": "Language & NLP"
+    },
+    "field-137": {
+      "value": "PhD proposal",
+      "type": "text",
+      "group": "Papers",
+      "label": "PhD proposal"
+    },
+    "field-138": {
+      "value": "01",
+      "type": "text",
+      "group": "Papers",
+      "label": "01"
+    },
+    "field-139": {
+      "value": "MANUSCRIPT · SYSTEMATIC REVIEW",
+      "type": "text",
+      "group": "Papers",
+      "label": "MANUSCRIPT · SYSTEMATIC REVIEW"
+    },
+    "field-140": {
+      "value": "Formalizing Retrieval-Augmented Generation Failure Modes and LoRA-Based Mitigation: A PRISMA-Guided Systematic Review with Pilot Closed-Passage Question Answering Experiments on Arabic and Malay",
+      "type": "text",
+      "group": "Papers",
+      "label": "Formalizing Retrieval-Augmented Generation Failure Modes and LoRA-Ba"
+    },
+    "field-141": {
+      "value": "A review of 61 studies, a four-part failure taxonomy, and preliminary closed-passage QA experiments. The proposed adapter mapping remains a hypothesis.",
+      "type": "text",
+      "group": "Papers",
+      "label": "A review of 61 studies, a four-part failure taxonomy, and preliminar"
+    },
+    "field-142": {
+      "value": "PRISMA review",
+      "type": "text",
+      "group": "Papers",
+      "label": "PRISMA review"
+    },
+    "field-143": {
+      "value": "RAG failure modes",
+      "type": "text",
+      "group": "Papers",
+      "label": "RAG failure modes"
+    },
+    "field-144": {
+      "value": "Arabic · Malay",
+      "type": "text",
+      "group": "Papers",
+      "label": "Arabic · Malay"
+    },
+    "field-145": {
+      "value": "papers/rag-failure-modes-systematic-review.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/rag-failure-modes-systematic-review.pdf",
+      "attribute": "href"
+    },
+    "field-146": {
+      "value": "Read PDF ↗",
+      "type": "text",
+      "group": "Papers",
+      "label": "Read PDF ↗"
+    },
+    "field-147": {
+      "value": "papers/rag-failure-modes-systematic-review.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/rag-failure-modes-systematic-review.pdf",
+      "attribute": "href"
+    },
+    "field-148": {
+      "value": "Download ↓",
+      "type": "text",
+      "group": "Papers",
+      "label": "Download ↓"
+    },
+    "field-149": {
+      "value": "21 pages",
+      "type": "text",
+      "group": "Papers",
+      "label": "21 pages"
+    },
+    "field-150": {
+      "value": "Research document",
+      "type": "text",
+      "group": "Papers",
+      "label": "Research document"
+    },
+    "field-151": {
+      "value": "02",
+      "type": "text",
+      "group": "Papers",
+      "label": "02"
+    },
+    "field-152": {
+      "value": "MANUSCRIPT · CONTROLLED EXPERIMENTS",
+      "type": "text",
+      "group": "Papers",
+      "label": "MANUSCRIPT · CONTROLLED EXPERIMENTS"
+    },
+    "field-153": {
+      "value": "An NLI Faithfulness Reward Added Nothing to LoRA Fine-Tuning of Qwen3 and T5Gemma 2 in Arabic and Malay Question Answering: A Controlled Null Result with a Length-Matched Analysis",
+      "type": "text",
+      "group": "Papers",
+      "label": "An NLI Faithfulness Reward Added Nothing to LoRA Fine-Tuning of Qwen"
+    },
+    "field-154": {
+      "value": "A controlled five-seed study finds no reliable additional benefit from the NLI reward after length matching. The work distinguishes proxy scores from answer quality.",
+      "type": "text",
+      "group": "Papers",
+      "label": "A controlled five-seed study finds no reliable additional benefit fr"
+    },
+    "field-155": {
+      "value": "LoRA",
+      "type": "text",
+      "group": "Papers",
+      "label": "LoRA"
+    },
+    "field-156": {
+      "value": "Faithfulness",
+      "type": "text",
+      "group": "Papers",
+      "label": "Faithfulness"
+    },
+    "field-157": {
+      "value": "Controlled null result",
+      "type": "text",
+      "group": "Papers",
+      "label": "Controlled null result"
+    },
+    "field-158": {
+      "value": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "attribute": "href"
+    },
+    "field-159": {
+      "value": "Read PDF ↗",
+      "type": "text",
+      "group": "Papers",
+      "label": "Read PDF ↗"
+    },
+    "field-160": {
+      "value": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/nli-faithfulness-lora-arabic-malay.pdf",
+      "attribute": "href"
+    },
+    "field-161": {
+      "value": "Download ↓",
+      "type": "text",
+      "group": "Papers",
+      "label": "Download ↓"
+    },
+    "field-162": {
+      "value": "57 pages",
+      "type": "text",
+      "group": "Papers",
+      "label": "57 pages"
+    },
+    "field-163": {
+      "value": "Research document",
+      "type": "text",
+      "group": "Papers",
+      "label": "Research document"
+    },
+    "field-164": {
+      "value": "03",
+      "type": "text",
+      "group": "Papers",
+      "label": "03"
+    },
+    "field-165": {
+      "value": "PHD RESEARCH PROPOSAL · NOVEMBER 2026",
+      "type": "text",
+      "group": "Papers",
+      "label": "PHD RESEARCH PROPOSAL · NOVEMBER 2026"
+    },
+    "field-166": {
+      "value": "Proxy Validity and Controlled Mitigation in Evidence-Grounded Training for Low-Resource Multilingual Retrieval-Augmented Generation: Evidence from Arabic and Malay Question Answering",
+      "type": "text",
+      "group": "Papers",
+      "label": "Proxy Validity and Controlled Mitigation in Evidence-Grounded Traini"
+    },
+    "field-167": {
+      "value": "Three linked studies: systematic review, controlled reward evaluation, and planned mitigation with length-controlled DPO and retrieval robustness.",
+      "type": "text",
+      "group": "Papers",
+      "label": "Three linked studies: systematic review, controlled reward evaluatio"
+    },
+    "field-168": {
+      "value": "PhD proposal",
+      "type": "text",
+      "group": "Papers",
+      "label": "PhD proposal"
+    },
+    "field-169": {
+      "value": "Proxy validity",
+      "type": "text",
+      "group": "Papers",
+      "label": "Proxy validity"
+    },
+    "field-170": {
+      "value": "Planned mitigation",
+      "type": "text",
+      "group": "Papers",
+      "label": "Planned mitigation"
+    },
+    "field-171": {
+      "value": "papers/research-proposal-akram-taha.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/research-proposal-akram-taha.pdf",
+      "attribute": "href"
+    },
+    "field-172": {
+      "value": "Read PDF ↗",
+      "type": "text",
+      "group": "Papers",
+      "label": "Read PDF ↗"
+    },
+    "field-173": {
+      "value": "papers/research-proposal-akram-taha.pdf",
+      "type": "url",
+      "group": "Papers",
+      "label": "papers/research-proposal-akram-taha.pdf",
+      "attribute": "href"
+    },
+    "field-174": {
+      "value": "Download ↓",
+      "type": "text",
+      "group": "Papers",
+      "label": "Download ↓"
+    },
+    "field-175": {
+      "value": "50 pages",
+      "type": "text",
+      "group": "Papers",
+      "label": "50 pages"
+    },
+    "field-176": {
+      "value": "Research document",
+      "type": "text",
+      "group": "Papers",
+      "label": "Research document"
+    },
+    "field-177": {
+      "value": "Two research manuscripts and a PhD proposal. Manuscripts are not listed as accepted publications. Study 3 is planned; the proposal document is dated November 2026.",
+      "type": "text",
+      "group": "Papers",
+      "label": "Two research manuscripts and a PhD proposal. Manuscripts are not lis"
+    },
+    "field-178": {
+      "value": "a",
+      "type": "text",
+      "group": "About",
+      "label": "a"
+    },
+    "field-179": {
+      "value": "ت",
+      "type": "text",
+      "group": "About",
+      "label": "ت"
+    },
+    "field-180": {
+      "value": "LANGUAGE, CONNECTED.",
+      "type": "text",
+      "group": "About",
+      "label": "LANGUAGE, CONNECTED."
+    },
+    "field-181": {
+      "value": "04 / A LITTLE CONTEXT",
+      "type": "text",
+      "group": "About",
+      "label": "04 / A LITTLE CONTEXT"
+    },
+    "field-182": {
+      "value": "A researcher.",
+      "type": "text",
+      "group": "About",
+      "label": "A researcher."
+    },
+    "field-183": {
+      "value": "An educator.",
+      "type": "text",
+      "group": "About",
+      "label": "An educator."
+    },
+    "field-184": {
+      "value": "Always a learner.",
+      "type": "text",
+      "group": "About",
+      "label": "Always a learner."
+    },
+    "field-185": {
+      "value": "I’m Akram Taha Zeyad, a PhD candidate at Universiti Kebangsaan Malaysia, researching proxy validity and controlled mitigation in evidence-grounded multilingual generation for Arabic and Malay, supervised by Dr. Lailatul Qadri Zakaria and Dr. Saidah Saad.",
+      "type": "text",
+      "group": "About",
+      "label": "I’m Akram Taha Zeyad, a PhD candidate at Universiti Kebangsaan Malay"
+    },
+    "field-186": {
+      "value": "Alongside my research, I’m an Assistant Lecturer at the University of Technology–Iraq. My work brings together language technology, practical machine learning, and teaching.",
+      "type": "text",
+      "group": "About",
+      "label": "Alongside my research, I’m an Assistant Lecturer at the University o"
+    },
+    "field-187": {
+      "value": "NOW",
+      "type": "text",
+      "group": "About",
+      "label": "NOW"
+    },
+    "field-188": {
+      "value": "PhD · NLP / AI",
+      "type": "text",
+      "group": "About",
+      "label": "PhD · NLP / AI"
+    },
+    "field-189": {
+      "value": "Universiti Kebangsaan Malaysia",
+      "type": "text",
+      "group": "About",
+      "label": "Universiti Kebangsaan Malaysia"
+    },
+    "field-190": {
+      "value": "2025",
+      "type": "text",
+      "group": "About",
+      "label": "2025"
+    },
+    "field-191": {
+      "value": "Malaysia International Scholarship",
+      "type": "text",
+      "group": "About",
+      "label": "Malaysia International Scholarship"
+    },
+    "field-192": {
+      "value": "MIS recipient",
+      "type": "text",
+      "group": "About",
+      "label": "MIS recipient"
+    },
+    "field-193": {
+      "value": "2024",
+      "type": "text",
+      "group": "About",
+      "label": "2024"
+    },
+    "field-194": {
+      "value": "Master of Artificial Intelligence",
+      "type": "text",
+      "group": "About",
+      "label": "Master of Artificial Intelligence"
+    },
+    "field-195": {
+      "value": "Universiti Kebangsaan Malaysia",
+      "type": "text",
+      "group": "About",
+      "label": "Universiti Kebangsaan Malaysia"
+    },
+    "field-196": {
+      "value": "FIND ME AROUND THE WEB",
+      "type": "text",
+      "group": "Profile links",
+      "label": "FIND ME AROUND THE WEB"
+    },
+    "field-197": {
+      "value": "Research is a",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Research is a"
+    },
+    "field-198": {
+      "value": "conversation.",
+      "type": "text",
+      "group": "Profile links",
+      "label": "conversation."
+    },
+    "field-199": {
+      "value": "Explore my work, connect professionally, or get in touch about a collaboration.",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Explore my work, connect professionally, or get in touch about a col"
+    },
+    "field-200": {
+      "value": "https://scholar.google.com/citations?user=6K_BerIAAAAJ&hl=en",
+      "type": "url",
+      "group": "Profile links",
+      "label": "https://scholar.google.com/citations?user=6K_BerIAAAAJ&hl=en",
+      "attribute": "href"
+    },
+    "field-201": {
+      "value": "G",
+      "type": "text",
+      "group": "Profile links",
+      "label": "G"
+    },
+    "field-202": {
+      "value": "Google Scholar",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Google Scholar"
+    },
+    "field-203": {
+      "value": "Publications & citations",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Publications & citations"
+    },
+    "field-204": {
+      "value": "https://www.linkedin.com/in/akram-t-44a095b6/",
+      "type": "url",
+      "group": "Profile links",
+      "label": "https://www.linkedin.com/in/akram-t-44a095b6/",
+      "attribute": "href"
+    },
+    "field-205": {
+      "value": "in",
+      "type": "text",
+      "group": "Profile links",
+      "label": "in"
+    },
+    "field-206": {
+      "value": "LinkedIn",
+      "type": "text",
+      "group": "Profile links",
+      "label": "LinkedIn"
+    },
+    "field-207": {
+      "value": "Professional connections",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Professional connections"
+    },
+    "field-208": {
+      "value": "https://orcid.org/0009-0002-4020-8060",
+      "type": "url",
+      "group": "Profile links",
+      "label": "https://orcid.org/0009-0002-4020-8060",
+      "attribute": "href"
+    },
+    "field-209": {
+      "value": "iD",
+      "type": "text",
+      "group": "Profile links",
+      "label": "iD"
+    },
+    "field-210": {
+      "value": "ORCID",
+      "type": "text",
+      "group": "Profile links",
+      "label": "ORCID"
+    },
+    "field-211": {
+      "value": "0009-0002-4020-8060",
+      "type": "text",
+      "group": "Profile links",
+      "label": "0009-0002-4020-8060"
+    },
+    "field-212": {
+      "value": "https://github.com/Akramtaha98",
+      "type": "url",
+      "group": "Profile links",
+      "label": "https://github.com/Akramtaha98",
+      "attribute": "href"
+    },
+    "field-213": {
+      "value": "GitHub",
+      "type": "text",
+      "group": "Profile links",
+      "label": "GitHub"
+    },
+    "field-214": {
+      "value": "Code & experiments",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Code & experiments"
+    },
+    "field-215": {
+      "value": "https://www.researchgate.net/profile/Akram-Zeyad-2",
+      "type": "url",
+      "group": "Profile links",
+      "label": "https://www.researchgate.net/profile/Akram-Zeyad-2",
+      "attribute": "href"
+    },
+    "field-216": {
+      "value": "R",
+      "type": "text",
+      "group": "Profile links",
+      "label": "R"
+    },
+    "field-217": {
+      "value": "ResearchGate",
+      "type": "text",
+      "group": "Profile links",
+      "label": "ResearchGate"
+    },
+    "field-218": {
+      "value": "Research & collaboration",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Research & collaboration"
+    },
+    "field-219": {
+      "value": "mailto:akram.t.zeyad@uotechnology.edu.iq",
+      "type": "url",
+      "group": "Profile links",
+      "label": "mailto:akram.t.zeyad@uotechnology.edu.iq",
+      "attribute": "href"
+    },
+    "field-220": {
+      "value": "Email",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Email"
+    },
+    "field-221": {
+      "value": "Start a conversation",
+      "type": "text",
+      "group": "Profile links",
+      "label": "Start a conversation"
+    },
+    "field-222": {
+      "value": "OPEN TO COLLABORATION",
+      "type": "text",
+      "group": "Contact",
+      "label": "OPEN TO COLLABORATION"
+    },
+    "field-223": {
+      "value": "Good research starts",
+      "type": "text",
+      "group": "Contact",
+      "label": "Good research starts"
+    },
+    "field-224": {
+      "value": "with a",
+      "type": "text",
+      "group": "Contact",
+      "label": "with a"
+    },
+    "field-225": {
+      "value": "conversation.",
+      "type": "text",
+      "group": "Contact",
+      "label": "conversation."
+    },
+    "field-226": {
+      "value": "Working on multilingual NLP, RAG, or applied AI?",
+      "type": "text",
+      "group": "Contact",
+      "label": "Working on multilingual NLP, RAG, or applied AI?"
+    },
+    "field-227": {
+      "value": "I’d love to hear what you’re exploring.",
+      "type": "text",
+      "group": "Contact",
+      "label": "I’d love to hear what you’re exploring."
+    },
+    "field-228": {
+      "value": "mailto:akram.t.zeyad@uotechnology.edu.iq",
+      "type": "url",
+      "group": "Contact",
+      "label": "mailto:akram.t.zeyad@uotechnology.edu.iq",
+      "attribute": "href"
+    },
+    "field-229": {
+      "value": "Say hello",
+      "type": "text",
+      "group": "Contact",
+      "label": "Say hello"
+    },
+    "field-230": {
+      "value": "© 2026 Akram Taha Zeyad",
+      "type": "text",
+      "group": "Footer",
+      "label": "© 2026 Akram Taha Zeyad"
+    },
+    "field-231": {
+      "value": "Built across languages. Based in Malaysia.",
+      "type": "text",
+      "group": "Footer",
+      "label": "Built across languages. Based in Malaysia."
+    },
+    "field-232": {
+      "value": "https://github.com/Akramtaha98",
+      "type": "url",
+      "group": "Footer",
+      "label": "https://github.com/Akramtaha98",
+      "attribute": "href"
+    },
+    "field-233": {
+      "value": "GitHub ↗",
+      "type": "text",
+      "group": "Footer",
+      "label": "GitHub ↗"
+    },
+    "field-234": {
+      "value": "https://www.linkedin.com/in/akram-t-44a095b6/",
+      "type": "url",
+      "group": "Footer",
+      "label": "https://www.linkedin.com/in/akram-t-44a095b6/",
+      "attribute": "href"
+    },
+    "field-235": {
+      "value": "LinkedIn ↗",
+      "type": "text",
+      "group": "Footer",
+      "label": "LinkedIn ↗"
+    },
+    "field-236": {
+      "value": "https://orcid.org/0009-0002-4020-8060",
+      "type": "url",
+      "group": "Footer",
+      "label": "https://orcid.org/0009-0002-4020-8060",
+      "attribute": "href"
+    },
+    "field-237": {
+      "value": "ORCID ↗",
+      "type": "text",
+      "group": "Footer",
+      "label": "ORCID ↗"
+    },
+    "field-238": {
+      "value": "admin/",
+      "type": "url",
+      "group": "Footer",
+      "label": "admin/",
+      "attribute": "href"
+    },
+    "field-239": {
+      "value": "Editor ↗",
+      "type": "text",
+      "group": "Footer",
+      "label": "Editor ↗"
+    },
+    "lab-query-en": {
+      "value": "What is retrieval-augmented generation?",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Query En"
+    },
+    "lab-query-ar": {
+      "value": "ما هو التوليد المعزز بالاسترجاع؟",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Query Ar"
+    },
+    "lab-query-ms": {
+      "value": "Apakah penjanaan berasaskan dapatan semula?",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Query Ms"
+    },
+    "lab-ready": {
+      "value": "Choose a question, then run the walkthrough.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Ready"
+    },
+    "lab-empty": {
+      "value": "Enter a question to explore the example.",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Empty"
+    },
+    "lab-stage-0": {
+      "value": "Reading the question…",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Stage 0"
+    },
+    "lab-stage-1": {
+      "value": "Retrieving example evidence…",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Stage 1"
+    },
+    "lab-stage-2": {
+      "value": "Grounding the illustrative answer…",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Stage 2"
+    },
+    "lab-complete": {
+      "value": "Example complete · 2 illustrative passages · no live model call",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Complete"
+    },
+    "lab-result-en-0": {
+      "value": "Connect the model to external knowledge",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result En 0"
+    },
+    "lab-result-en-1": {
+      "value": "Ground the answer in context",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result En 1"
+    },
+    "lab-result-ar-0": {
+      "value": "ربط النموذج بمصادر المعرفة الخارجية",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result Ar 0"
+    },
+    "lab-result-ar-1": {
+      "value": "توليد الإجابة بالاعتماد على السياق",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result Ar 1"
+    },
+    "lab-result-ms-0": {
+      "value": "Hubungkan model dengan pengetahuan luaran",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result Ms 0"
+    },
+    "lab-result-ms-1": {
+      "value": "Asaskan jawapan pada konteks",
+      "type": "text",
+      "group": "Interactive lab",
+      "label": "Result Ms 1"
+    }
+  }
+}
