@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
-import {GitHubPublisher,validateContent,contentSignature,encodeContent,decodeContent,safeURL,API} from '../admin/core.mjs';
+import {GitHubPublisher,validateContent,restoreDraftContent,contentSignature,encodeContent,decodeContent,safeURL,API} from '../admin/core.mjs';
 const schema=JSON.parse(readFileSync(new URL('../content.json',import.meta.url),'utf8'));
 const clone=x=>JSON.parse(JSON.stringify(x));
 const response=(data,status=200)=>({ok:status>=200&&status<300,status,json:async()=>data});
@@ -36,3 +36,5 @@ test('every HTML copy field and local file link exists',()=>{const markup=readFi
 test('the editor stores drafts but never persists its session credential',()=>{const code=readFileSync(new URL('../admin/admin.js',import.meta.url),'utf8');assert.match(code,/localStorage\.setItem\(DRAFT_KEY,JSON\.stringify\(\{content:working,savedAt:/);assert.ok(!/localStorage[^\n]*(?:token|publisher)|sessionStorage/.test(code));assert.ok(!readFileSync(new URL('../admin/core.mjs',import.meta.url),'utf8').includes('localStorage'));});
 
 test('owner connection reads the exact repository endpoint without a trailing slash',async()=>{const seen=[];const client=new GitHubPublisher('dummy',async(url)=>{seen.push(url);if(url==='https://api.github.com/user')return response({login:'Akramtaha98'});if(url===API)return response({permissions:{push:true}});if(url===`${API}/contents/content.json?ref=main`)return response({sha:'remote-sha',content:encodeContent(schema)});return response({},404);});const connection=await client.connect();assert.equal(connection.file.sha,'remote-sha');assert.equal(seen.length,3);assert.equal(seen[1],API);});
+
+test('older saved drafts retain edits while newly introduced fields get current defaults',()=>{const previous=structuredClone(schema);delete previous.fields['seo-name'];delete previous.fields['seo-role'];previous.fields['field-014'].value='My saved headline';const restored=restoreDraftContent(previous,schema);assert.equal(restored.fields['field-014'].value,'My saved headline');assert.equal(restored.fields['seo-name'].value,schema.fields['seo-name'].value);previous.fields['unrecognized']={value:'bad'};assert.throws(()=>restoreDraftContent(previous,schema),/does not match/);});

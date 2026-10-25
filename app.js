@@ -1,4 +1,6 @@
 window.siteContentReady.finally(() => {
+  const remember=(key,value)=>{try{localStorage.setItem(key,value);}catch{}};
+  const recall=(key,allowed,fallback)=>{try{const value=localStorage.getItem(key);return allowed.includes(value)?value:fallback;}catch{return fallback;}};
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const copy = value => window.siteCopy(value);
   const field = (key, fallback) => window.siteFieldValue(key, fallback);
@@ -50,17 +52,23 @@ window.siteContentReady.finally(() => {
   const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('nav a,.section-tabs a').forEach(a=>{const active=a.getAttribute('href')===`#${entry.target.id}`;if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}}),{rootMargin:'-15% 0px -60% 0px'});
   document.querySelectorAll('section[id]').forEach(el=>sectionObserver.observe(el));
   const tabs=Array.from(document.querySelectorAll('[data-study]'));
-  function activateTab(button,focus=false){tabs.forEach(tab=>{const active=tab===button;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;document.getElementById(tab.getAttribute('aria-controls')).hidden=!active;});if(focus)button.focus();}
+  function activateTab(button,focus=false,persist=true){if(persist)remember('portfolio-study',button.dataset.study);tabs.forEach(tab=>{const active=tab===button;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;document.getElementById(tab.getAttribute('aria-controls')).hidden=!active;});if(focus)button.focus();}
   tabs.forEach((button,i)=>{button.addEventListener('click',()=>activateTab(button));button.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();activateTab(tabs[n],true);}});});
-  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+  activateTab(tabs.find(tab=>tab.dataset.study===recall('portfolio-study',tabs.map(t=>t.dataset.study),'review')),false,false);
+  function applyFilter(value,persist=true){
+    const button=Array.from(document.querySelectorAll('[data-filter]')).find(b=>b.dataset.filter===value);if(!button)return;if(persist)remember('portfolio-filter',value);
     document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
     document.querySelectorAll('[data-category]').forEach(article=>{article.hidden=button.dataset.filter!=='all'&&article.dataset.category!==button.dataset.filter;if(!article.hidden)article.classList.add('is-visible');});
-  }));
+  }
+  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>applyFilter(button.dataset.filter)));
+  applyFilter(recall('portfolio-filter',['all','nlp','proposal'],'all'),false);
   const query=document.querySelector('#query'),result=document.querySelector('#demo-result'),status=document.querySelector('#demo-status');
   let lang='en',busy=false;
   function statusText(key,fallback){status.textContent=field(key,fallback);}
-  function selectLanguage(value){lang=value;query.lang=lang;query.dir=lang==='ar'?'rtl':'ltr';query.value=field(`lab-query-${lang}`,{en:'What is retrieval-augmented generation?',ar:'ما هو التوليد المعزز بالاسترجاع؟',ms:'Apakah penjanaan berasaskan dapatan semula?'}[lang]);document.querySelectorAll('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});}
+  function selectLanguage(value,persist=true){if(persist)remember('portfolio-language',value);lang=value;query.lang=lang;query.dir=lang==='ar'?'rtl':'ltr';query.value=field(`lab-query-${lang}`,{en:'What is retrieval-augmented generation?',ar:'ما هو التوليد المعزز بالاسترجاع؟',ms:'Apakah penjanaan berasaskan dapatan semula?'}[lang]);document.querySelectorAll('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});}
   document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{if(busy)return;selectLanguage(button.dataset.lang);statusText('lab-ready','Choose a question, then run the walkthrough.');}));
+  const savedLanguage=recall('portfolio-language',['en','ar','ms'],null);if(savedLanguage)selectLanguage(savedLanguage,false);
+  document.addEventListener('portfolio:reset-preferences',()=>{activateTab(tabs[0],false,false);applyFilter('all',false);selectLanguage('en',false);});
   async function run(){
     if(busy)return;
     if(!query.value.trim()){statusText('lab-empty','Enter a question to explore the example.');query.focus();return;}

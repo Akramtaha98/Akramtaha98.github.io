@@ -1,4 +1,4 @@
-import {GitHubPublisher,validateContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs?v=seo-20261026';
+import {GitHubPublisher,validateContent,restoreDraftContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs?v=appearance-20261026';
 const $=selector=>document.querySelector(selector);
 const DRAFT_KEY='akram-portfolio-studio-draft-v1';
 let schema,baseline,working,publisher=null,remoteSha=null,selectedGroup='Introduction',busy=false,storageOK=true,filter='';
@@ -57,17 +57,17 @@ $('#publish').addEventListener('click',async()=>{
   message('Saved to GitHub. GitHub Pages is publishing the update; allow a minute or two before refreshing your public website.',false,{url:`https://github.com/${OWNER}/${REPO}/actions`,label:'Check publishing status ↗'});
  }catch(error){message(error.message,true);}finally{busy=false;updateStatus();}
 });
-for(const [id,mobile] of [['#wide',false],['#narrow',true]])$(id).addEventListener('click',()=>{frame.classList.toggle('mobile',mobile);$('#wide').classList.toggle('active',!mobile);$('#narrow').classList.toggle('active',mobile);$('#wide').setAttribute('aria-pressed',String(!mobile));$('#narrow').setAttribute('aria-pressed',String(mobile));});
 window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==frame.contentWindow)return;if(event.data?.type==='portfolio:ready'&&working)preview();if(event.data?.type==='portfolio:select'&&schema?.fields[event.data.key]){selectedGroup=schema.fields[event.data.key].group;filter='';$('#search').value='';renderGroups();renderFields(event.data.key);}});
 window.addEventListener('beforeunload',event=>{if(isDirty()&&!storageOK){event.preventDefault();event.returnValue='';}});
 async function init(){
  document.body.classList.add('loading');try{
   const response=await fetch('../content.json',{cache:'no-cache'});if(!response.ok)throw new Error('Could not load your website content. Refresh to try again.');schema=await response.json();baseline=validateContent(schema,schema);working=clone(baseline);
-  try{const saved=localStorage.getItem(DRAFT_KEY);if(saved){working=validateContent(JSON.parse(saved).content,schema);if(isDirty())message('Your previous draft has been restored. It has not been published.');}}catch{message('An older draft could not be restored. The published content has been loaded instead.',true);working=clone(baseline);}
+  try{const saved=localStorage.getItem(DRAFT_KEY);if(saved){working=restoreDraftContent(JSON.parse(saved).content,schema);if(isDirty())message('Your previous draft has been restored. It has not been published.');}}catch{message('An older draft could not be restored. The published content has been loaded instead.',true);working=clone(baseline);}
   renderGroups();renderFields();preview();updateStatus();
  }catch(error){message(error.message,true);$('#draft-status').textContent='Content unavailable';document.querySelectorAll('aside button,aside input').forEach(el=>el.disabled=true);}finally{document.body.classList.remove('loading');}
 }
 init();
-function sizePreview(){const shell=document.querySelector('.frame-shell');if(!shell.clientWidth)return;const target=frame.classList.contains('mobile')?390:1120;const scale=Math.min(shell.clientWidth/target,1);frame.style.width=`${target}px`;frame.style.height=`${shell.clientHeight/scale}px`;frame.style.transform=`scale(${scale})`;frame.style.left=`${Math.max(0,(shell.clientWidth-target*scale)/2)}px`;}
+function sizePreview(){const shell=document.querySelector('.frame-shell');if(!shell.clientWidth)return;const target=Number($('#preview-width').value)||1120;const scale=Math.min(shell.clientWidth/target,1);frame.style.width=`${target}px`;frame.style.height=`${shell.clientHeight/scale}px`;frame.style.transform=`scale(${scale})`;frame.style.left=`${Math.max(0,(shell.clientWidth-target*scale)/2)}px`;}
 new ResizeObserver(sizePreview).observe(document.querySelector('.frame-shell'));
-$('#wide').addEventListener('click',sizePreview);$('#narrow').addEventListener('click',sizePreview);
+$('#preview-width').addEventListener('change',sizePreview);
+$('#preview-toggle').addEventListener('click',()=>{const open=$('#preview-toggle').getAttribute('aria-expanded')!=='true';$('#preview-toggle').setAttribute('aria-expanded',String(open));$('#preview-toggle').textContent=open?'Hide page preview':'Show page preview';document.body.classList.toggle('show-mobile-preview',open);if(open){$('#preview-width').value='390';sizePreview();document.querySelector('#studio-preview').scrollIntoView({block:'start',behavior:'smooth'});}});

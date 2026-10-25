@@ -20,6 +20,10 @@ export function validateContent(candidate, schema) {
   }
   return clean;
 }
+export function restoreDraftContent(candidate,schema) {
+  if(!candidate || candidate.version!==1 || !candidate.fields || typeof candidate.fields!=='object')throw new Error('Invalid saved draft.');
+  return validateContent({...candidate,fields:{...schema.fields,...candidate.fields}},schema);
+}
 export function contentSignature(content) {
   return JSON.stringify(Object.keys(content.fields).sort().map(key=>[key,content.fields[key].value]));
 }

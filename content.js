@@ -17,7 +17,7 @@
         if (!field || typeof field.value !== 'string') return;
         if (property === 'href' && !safeURL(field.value)) return;
         if (property === 'textContent') el.textContent = field.value;
-        else if (property === 'value') el.value = field.value;
+        else if (property === 'value') el.value = data.fields[`lab-query-${el.lang}`]?.value ?? field.value;
         else el.setAttribute(property, field.value);
       });
     }

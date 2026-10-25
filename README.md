@@ -63,3 +63,11 @@ To submit manually after ownership verification:
 5. If desired, add this website URL to your Google Scholar, ORCID, LinkedIn, and university profiles to connect your existing public identity with the site.
 
 Account verification and submission require authorization in the owner's Google account. No submission has been made by this update. Crawling can take days to weeks, and inclusion is not guaranteed.
+
+## Appearance and visitor preferences
+
+The portfolio and editor support **System**, **Light**, and **Dark**. System is the default and follows device changes in real time. A visitor's explicit choice is stored in the `portfolio_theme` cookie for one year (`SameSite=Lax`, `Secure` on HTTPS, site-wide path), with local storage as a fallback. The theme applies before the stylesheet is displayed and synchronizes across same-origin tabs and the preview.
+
+Study selection, writing filter, and lab language are stored only in local storage. The **Privacy & preferences** section explains this and can reset visitor preferences without deleting editorial drafts. No analytics or advertising cookies have been added, and GitHub tokens remain memory-only.
+
+Mobile refinements include larger touch controls and form text, wrapping content, scrollable study/filter tabs, safe-area spacing, and accessible mobile navigation. Studio has Desktop, Tablet, Phone, and Small phone preview sizes; on narrow screens **Show page preview** opens an inline preview.
