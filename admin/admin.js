@@ -1,4 +1,4 @@
-import {GitHubPublisher,validateContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs';
+import {GitHubPublisher,validateContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs?v=seo-20261026';
 const $=selector=>document.querySelector(selector);
 const DRAFT_KEY='akram-portfolio-studio-draft-v1';
 let schema,baseline,working,publisher=null,remoteSha=null,selectedGroup='Introduction',busy=false,storageOK=true,filter='';

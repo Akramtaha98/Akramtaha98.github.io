@@ -3,7 +3,7 @@
   const originalKeys = new Map();
   document.querySelectorAll('[data-copy]').forEach(el => originalKeys.set(el.textContent, el.dataset.copy));
   let current = null;
-  const seoModule = import('./seo.mjs');
+  const seoModule = import('./seo.mjs?v=seo-20261026');
   const safeURL = value => {
     try { return ['https:', 'http:', 'mailto:', 'tel:'].includes(new URL(value, location.href).protocol); }
     catch { return false; }

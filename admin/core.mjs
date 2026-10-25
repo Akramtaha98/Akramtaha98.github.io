@@ -1,4 +1,4 @@
-import {renderPublishedHTML} from '../seo.mjs';
+import {renderPublishedHTML} from '../seo.mjs?v=seo-20261026';
 export const OWNER = 'Akramtaha98';
 export const REPO = 'Akramtaha98.github.io';
 export const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
