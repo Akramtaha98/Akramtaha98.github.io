@@ -1,6 +1,6 @@
-import {definitions,legacyKeys,newEntry,moveEntry} from '../collections.mjs?v=entries-20261026';
-import {renderEntrySection} from './entries.js?v=entries-20261026';
-import {GitHubPublisher,validateContent,restoreDraftContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs?v=entries-20261026';
+import {definitions,legacyKeys,newEntry,moveEntry} from '../collections.mjs?v=projects-20261026';
+import {renderEntrySection} from './entries.js?v=projects-20261026';
+import {GitHubPublisher,validateContent,restoreDraftContent,contentSignature,OWNER,REPO,decodeContent} from './core.mjs?v=projects-20261026';
 const $=selector=>document.querySelector(selector);
 const DRAFT_KEY='akram-portfolio-studio-draft-v1';
 let schema,baseline,working,publisher=null,remoteSha=null,selectedGroup='Introduction',busy=false,storageOK=true,filter='';

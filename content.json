@@ -42,7 +42,7 @@
       "attribute": "aria-label"
     },
     "field-007": {
-      "value": "Research",
+      "value": "Projects",
       "type": "text",
       "group": "Navigation",
       "label": "Research"
@@ -280,177 +280,177 @@
       "label": "Efficient fine-tuning"
     },
     "field-046": {
-      "value": "01 / RESEARCH DIRECTIONS",
+      "value": "SELECTED PROJECTS",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "01 / RESEARCH DIRECTIONS"
     },
     "field-047": {
-      "value": "Research directions.",
+      "value": "Things I’ve",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Three threads."
     },
     "field-048": {
-      "value": "One connected question.",
+      "value": "built.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "One connected question."
     },
     "field-049": {
-      "value": "When a grounding score improves, do the answers improve too? My research examines that question in Arabic and Malay.",
+      "value": "Practical tools for research, language, and intelligent networks.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "When a grounding score improves, do the answers improve too? My rese"
     },
     "field-050": {
       "value": "01 — RETRIEVAL",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "01 — RETRIEVAL"
     },
     "field-051": {
       "value": "سؤال",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "سؤال"
     },
     "field-052": {
       "value": "answer ↗",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "answer ↗"
     },
     "field-053": {
       "value": "Understand where",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Understand where"
     },
     "field-054": {
       "value": "grounding breaks.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "grounding breaks."
     },
     "field-055": {
       "value": "Formalizing missing context, context noise, formatting errors, and hallucination through a systematic review and pilot experiments.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Formalizing missing context, context noise, formatting errors, and h"
     },
     "field-056": {
       "value": "RAG",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "RAG"
     },
     "field-057": {
       "value": "Failure taxonomy",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Failure taxonomy"
     },
     "field-058": {
       "value": "Arabic · Malay",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Arabic · Malay"
     },
     "field-059": {
       "value": "02 — ADAPTATION",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "02 — ADAPTATION"
     },
     "field-060": {
       "value": "SMALL ADAPTERS. NEW POSSIBILITIES.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "SMALL ADAPTERS. NEW POSSIBILITIES."
     },
     "field-061": {
       "value": "Test the reward.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Test the reward."
     },
     "field-062": {
       "value": "Control the confounds.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Control the confounds."
     },
     "field-063": {
       "value": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI reward effects from answer length and training machinery.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI r"
     },
     "field-064": {
       "value": "LoRA / PEFT",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "LoRA / PEFT"
     },
     "field-065": {
       "value": "Qwen3 · T5Gemma 2",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Qwen3 · T5Gemma 2"
     },
     "field-066": {
       "value": "LLMs",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "LLMs"
     },
     "field-067": {
       "value": "03 — APPLICATION",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "03 — APPLICATION"
     },
     "field-068": {
       "value": "EVIDENCE → ANSWER",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "EVIDENCE → ANSWER"
     },
     "field-069": {
       "value": "Grounding over guesswork",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Grounding over guesswork"
     },
     "field-070": {
       "value": "Better answers.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Better answers."
     },
     "field-071": {
       "value": "Beyond proxy scores.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Beyond proxy scores."
     },
     "field-072": {
       "value": "Planned research on length-controlled preference optimization and robustness to noisy or missing evidence.",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Planned research on length-controlled preference optimization and ro"
     },
     "field-073": {
       "value": "Planned · DPO",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Planned · DPO"
     },
     "field-074": {
       "value": "Retrieval robustness",
       "type": "text",
-      "group": "Research cards",
+      "group": "Projects",
       "label": "Retrieval robustness"
     },
     "field-075": {
@@ -786,19 +786,19 @@
       "label": "Ready to explore · choose a language above"
     },
     "field-129": {
-      "value": "SELECTED WORK",
+      "value": "RESEARCH WORK",
       "type": "text",
       "group": "Papers",
       "label": "03 / WRITING & RESEARCH"
     },
     "field-130": {
-      "value": "What I’ve",
+      "value": "Studies &",
       "type": "text",
       "group": "Papers",
       "label": "The research."
     },
     "field-131": {
-      "value": "worked on.",
+      "value": "findings.",
       "type": "text",
       "group": "Papers",
       "label": "Read the evidence."
@@ -1582,37 +1582,37 @@
   "collections": {
     "research": [
       {
-        "id": "retrieval",
-        "title": "Understand where\ngrounding breaks.",
-        "label": "RETRIEVAL",
-        "summary": "Formalizing missing context, context noise, formatting errors, and hallucination through a systematic review and pilot experiments.",
-        "tags": "RAG, Failure taxonomy, Arabic · Malay",
-        "url": "#lab",
+        "id": "paperbrief",
+        "title": "PaperBrief",
+        "label": "AI RESEARCH TOOL",
+        "summary": "Built a web app that turns PDFs into structured summaries, key findings, and plain-English explanations.",
+        "tags": "React, Node.js, Gemini",
+        "url": "https://github.com/Akramtaha98/paperbrief",
         "tone": "green",
-        "visual": "retrieval",
-        "caption": "answer ↗"
+        "visual": "brief",
+        "caption": "PDF → clear summary"
       },
       {
-        "id": "adaptation",
-        "title": "Test the reward.\nControl the confounds.",
-        "label": "ADAPTATION",
-        "summary": "Controlled LoRA experiments on Qwen3 and T5Gemma 2, separating NLI reward effects from answer length and training machinery.",
-        "tags": "LoRA / PEFT, Qwen3 · T5Gemma 2, LLMs",
-        "url": "#lab",
-        "tone": "orange",
-        "visual": "adaptation",
-        "caption": "SMALL ADAPTERS. NEW POSSIBILITIES."
-      },
-      {
-        "id": "application",
-        "title": "Better answers.\nBeyond proxy scores.",
-        "label": "APPLICATION",
-        "summary": "Planned research on length-controlled preference optimization and robustness to noisy or missing evidence.",
-        "tags": "Planned · DPO, Retrieval robustness",
-        "url": "#publications",
+        "id": "pii-redactor",
+        "title": "Arabic–English PII Redactor",
+        "label": "MULTILINGUAL NLP",
+        "summary": "Combined LoRA-tuned language models and rules to redact personal information from mixed Arabic–English text.",
+        "tags": "Python, XLM-R, LoRA",
+        "url": "https://github.com/Akramtaha98/PII-redactor-ar-en-codemix",
         "tone": "purple",
-        "visual": "evidence",
-        "caption": "Grounding over guesswork"
+        "visual": "redactor",
+        "caption": "Mixed-language text → redacted output"
+      },
+      {
+        "id": "hybrid-cdn",
+        "title": "Hybrid CDN Simulator",
+        "label": "NETWORK SIMULATION",
+        "summary": "Built a reproducible simulation of edge caching, compute offloading, and Q-learning, with CSV results and plots.",
+        "tags": "Python, Q-learning, Edge computing",
+        "url": "https://github.com/Akramtaha98/Hybrid-CDN-Simulation-Edge-Cache-MEC-Q-learning",
+        "tone": "orange",
+        "visual": "cdn",
+        "caption": "Synthetic traffic → reproducible results"
       }
     ],
     "studies": [

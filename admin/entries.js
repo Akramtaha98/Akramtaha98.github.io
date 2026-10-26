@@ -1,4 +1,4 @@
-import {definitions,defaults} from '../collections.mjs?v=entries-20261026';
+import {definitions,defaults} from '../collections.mjs?v=projects-20261026';
 const make=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
 export function renderEntrySection({name,entries,baseline,onAction,onChange,onFocus,focus,search='',documents=[]}){
  const def=definitions[name],section=make('section','entry-section');section.dataset.collection=name;
@@ -20,7 +20,7 @@ export function renderEntrySection({name,entries,baseline,onAction,onChange,onFo
   for(const [key,label,type,choices] of def.fields){
    const field=make('div','record-field'),id=`entry-${name}-${entry.id}-${key}`,caption=make('label','',label);caption.htmlFor=id;
    let input;
-   if(type==='select'){input=make('select');for(const choice of choices){const option=make('option','',({green:'Emerald',orange:'Terracotta',purple:'Lavender',retrieval:'Retrieval network',adaptation:'Model adaptation',evidence:'Evidence and answer',nlp:'Research paper',proposal:'PhD proposal'})[choice]||choice);option.value=choice;input.append(option);}input.value=entry[key];}
+   if(type==='select'){input=make('select');for(const choice of choices){const option=make('option','',({brief:'Paper summarizer',redactor:'Text redaction',cdn:'Network simulation',green:'Emerald',orange:'Terracotta',purple:'Lavender',retrieval:'Retrieval network',adaptation:'Model adaptation',evidence:'Evidence and answer',nlp:'Research paper',proposal:'PhD proposal'})[choice]||choice);option.value=choice;input.append(option);}input.value=entry[key];}
    else if(type==='boolean'){input=make('input');input.type='checkbox';input.checked=entry[key];field.classList.add('checkbox-field');}
    else if(type==='long'){input=make('textarea');input.rows=key==='title'?3:4;input.value=entry[key];input.maxLength=16000;input.dir='auto';}
    else{input=make('input');input.type='text';input.value=entry[key];input.maxLength=type==='url'?2000:16000;input.dir='auto';if(type==='url'){input.inputMode='url';input.spellcheck=false;input.placeholder='https://… or papers/your-document.pdf';}}

@@ -4,8 +4,8 @@
   document.querySelectorAll('[data-copy]').forEach(el => originalKeys.set(el.textContent, el.dataset.copy));
   let current = null, collectionAPI=null;
   const renderedCollections=new Map();
-  const collectionModule=import('./collections.mjs?v=entries-20261026');
-  const seoModule = import('./seo.mjs?v=entries-20261026');
+  const collectionModule=import('./collections.mjs?v=projects-20261026');
+  const seoModule = import('./seo.mjs?v=projects-20261026');
   const safeURL = value => {
     try { return ['https:', 'http:', 'mailto:', 'tel:'].includes(new URL(value, location.href).protocol); }
     catch { return false; }

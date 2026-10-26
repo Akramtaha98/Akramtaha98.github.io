@@ -1,5 +1,5 @@
-import {getCollections,validateCollections,assertReady,legacyKeys} from '../collections.mjs?v=entries-20261026';
-import {renderPublishedHTML} from '../seo.mjs?v=entries-20261026';
+import {getCollections,validateCollections,assertReady,legacyKeys} from '../collections.mjs?v=projects-20261026';
+import {renderPublishedHTML} from '../seo.mjs?v=projects-20261026';
 export const OWNER = 'Akramtaha98';
 export const REPO = 'Akramtaha98.github.io';
 export const API = `https://api.github.com/repos/${OWNER}/${REPO}`;

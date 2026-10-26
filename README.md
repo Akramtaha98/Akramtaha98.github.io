@@ -88,4 +88,8 @@ Papers can be searched by title, description, or topic alongside the category fi
 
 ## Focused portfolio layout
 
-The homepage now leads with Akram’s identity, selected work, and academic background. Paper cards use short descriptive headings; the linked PDFs contain the full manuscript titles. Detailed research cards, study tabs, and the illustrative lab are grouped under **Explore my research approach**. The editor still manages those entries and opens the relevant disclosure when previewing them. The default view shows every paper, with search, category controls, repeated navigation, and duplicate profile links omitted from the visual layout.
+The homepage now leads with Akram’s identity, selected work, and academic background. Paper cards use short descriptive headings; the linked PDFs contain the full manuscript titles. Study tabs and the illustrative lab are grouped under **Explore my research approach**. The editor still manages those entries and opens the relevant disclosure when previewing them. The default view shows every paper, with search, category controls, repeated navigation, and duplicate profile links omitted from the visual layout.
+
+## Selected projects
+
+Three verified public projects lead the work section: PaperBrief, Arabic–English PII Redactor, and Hybrid CDN Simulator. Each has a concise description, repository link, and illustrative animated preview. These previews demonstrate the concept, not a running service or measured results. Reduced-motion and pause preferences apply. In Portfolio Studio, choose Projects to add, edit, delete, reorder, or undo changes, then publish.
