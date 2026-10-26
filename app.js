@@ -93,8 +93,8 @@ window.siteContentReady.finally(() => {
   }
   document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>applyFilter(button.dataset.filter)));
   paperSearch?.addEventListener('input',()=>applyFilter(document.querySelector('[data-filter][aria-pressed=true]')?.dataset.filter||'all',false));
-  document.addEventListener('keydown',event=>{if(event.key==='/'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!event.target.closest('input,textarea,select,[contenteditable=true]')){event.preventDefault();paperSearch?.focus();}});
-  applyFilter(recall('portfolio-filter',['all','nlp','proposal'],'all'),false);
+  document.addEventListener('keydown',event=>{if(paperSearch?.offsetParent&&event.key==='/'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!event.target.closest('input,textarea,select,[contenteditable=true]')){event.preventDefault();paperSearch?.focus();}});
+  applyFilter(document.body.classList.contains('focused-portfolio')?'all':recall('portfolio-filter',['all','nlp','proposal'],'all'),false);
   document.addEventListener('portfolio:collections',event=>{if(event.detail.names.includes('studies'))bindStudyTabs(event.detail.selectedStudy);if(event.detail.names.includes('papers'))applyFilter(document.querySelector('[data-filter][aria-pressed=true]')?.dataset.filter||'all',false);});
   const query=document.querySelector('#query'),result=document.querySelector('#demo-result'),status=document.querySelector('#demo-status');
   let lang='en',busy=false;

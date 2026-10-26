@@ -78,37 +78,37 @@
       "label": "Let’s connect"
     },
     "field-013": {
-      "value": "PHD CANDIDATE / UNIVERSITI KEBANGSAAN MALAYSIA",
+      "value": "AKRAM TAHA ZEYAD",
       "type": "text",
       "group": "Introduction",
       "label": "AKRAM TAHA ZEYAD / AI RESEARCHER"
     },
     "field-014": {
-      "value": "Better answers.",
+      "value": "AI researcher.",
       "type": "text",
       "group": "Introduction",
       "label": "Better answers."
     },
     "field-015": {
-      "value": "Across",
+      "value": "Educator.",
       "type": "text",
       "group": "Introduction",
       "label": "Across"
     },
     "field-016": {
-      "value": "languages.",
+      "value": "PhD candidate.",
       "type": "text",
       "group": "Introduction",
       "label": "languages."
     },
     "field-017": {
-      "value": "I’m Akram. I study whether evidence-grounded language models give answers that stay faithful to their evidence in Arabic and Malay. My research asks when evaluation scores reflect real improvements—and when they don’t.",
+      "value": "I research reliable AI for Arabic and Malay at Universiti Kebangsaan Malaysia. I also teach at the University of Technology–Iraq.",
       "type": "text",
       "group": "Introduction",
       "label": "I’m Akram. I study whether evidence-grounded language models give an"
     },
     "field-018": {
-      "value": "Explore my research",
+      "value": "See my work",
       "type": "text",
       "group": "Introduction",
       "label": "Explore my research"
@@ -133,7 +133,7 @@
       "label": "BASED IN MALAYSIA"
     },
     "field-022": {
-      "value": "WORKING ACROSS LANGUAGES",
+      "value": "ARABIC · MALAY · AI",
       "type": "text",
       "group": "Introduction",
       "label": "WORKING ACROSS LANGUAGES"
@@ -786,19 +786,19 @@
       "label": "Ready to explore · choose a language above"
     },
     "field-129": {
-      "value": "03 / WRITING & RESEARCH",
+      "value": "SELECTED WORK",
       "type": "text",
       "group": "Papers",
       "label": "03 / WRITING & RESEARCH"
     },
     "field-130": {
-      "value": "The research.",
+      "value": "What I’ve",
       "type": "text",
       "group": "Papers",
       "label": "The research."
     },
     "field-131": {
-      "value": "Read the evidence.",
+      "value": "worked on.",
       "type": "text",
       "group": "Papers",
       "label": "Read the evidence."
@@ -811,7 +811,7 @@
       "attribute": "href"
     },
     "field-133": {
-      "value": "Full publication record ↗",
+      "value": "Google Scholar ↗",
       "type": "text",
       "group": "Papers",
       "label": "Full publication record ↗"
@@ -1082,7 +1082,7 @@
       "label": "Research document"
     },
     "field-177": {
-      "value": "Research manuscripts and proposals. Status labels distinguish work in progress from published work.",
+      "value": "Research manuscripts and a PhD proposal. Publication status is shown above.",
       "type": "text",
       "group": "Papers",
       "label": "Two research manuscripts and a PhD proposal. Manuscripts are not lis"
@@ -1106,37 +1106,37 @@
       "label": "LANGUAGE, CONNECTED."
     },
     "field-181": {
-      "value": "04 / A LITTLE CONTEXT",
+      "value": "BACKGROUND",
       "type": "text",
       "group": "About",
       "label": "04 / A LITTLE CONTEXT"
     },
     "field-182": {
-      "value": "A researcher.",
+      "value": "My background.",
       "type": "text",
       "group": "About",
       "label": "A researcher."
     },
     "field-183": {
-      "value": "An educator.",
+      "value": "",
       "type": "text",
       "group": "About",
       "label": "An educator."
     },
     "field-184": {
-      "value": "Always a learner.",
+      "value": "",
       "type": "text",
       "group": "About",
       "label": "Always a learner."
     },
     "field-185": {
-      "value": "I’m Akram Taha Zeyad, a PhD candidate at Universiti Kebangsaan Malaysia, researching proxy validity and controlled mitigation in evidence-grounded multilingual generation for Arabic and Malay, supervised by Dr. Lailatul Qadri Zakaria and Dr. Saidah Saad.",
+      "value": "PhD candidate at Universiti Kebangsaan Malaysia, supervised by Dr. Lailatul Qadri Zakaria and Dr. Saidah Saad.",
       "type": "text",
       "group": "About",
       "label": "I’m Akram Taha Zeyad, a PhD candidate at Universiti Kebangsaan Malay"
     },
     "field-186": {
-      "value": "Alongside my research, I’m an Assistant Lecturer at the University of Technology–Iraq. My work brings together language technology, practical machine learning, and teaching.",
+      "value": "Assistant Lecturer at the University of Technology–Iraq. My work connects language technology, machine learning, and teaching.",
       "type": "text",
       "group": "About",
       "label": "Alongside my research, I’m an Assistant Lecturer at the University o"
@@ -1196,19 +1196,19 @@
       "label": "Universiti Kebangsaan Malaysia"
     },
     "field-196": {
-      "value": "FIND ME AROUND THE WEB",
+      "value": "PROFILES",
       "type": "text",
       "group": "Profile links",
       "label": "FIND ME AROUND THE WEB"
     },
     "field-197": {
-      "value": "Research is a",
+      "value": "Find me",
       "type": "text",
       "group": "Profile links",
       "label": "Research is a"
     },
     "field-198": {
-      "value": "conversation.",
+      "value": "online.",
       "type": "text",
       "group": "Profile links",
       "label": "conversation."
@@ -1358,37 +1358,37 @@
       "label": "Start a conversation"
     },
     "field-222": {
-      "value": "OPEN TO COLLABORATION",
+      "value": "GET IN TOUCH",
       "type": "text",
       "group": "Contact",
       "label": "OPEN TO COLLABORATION"
     },
     "field-223": {
-      "value": "Good research starts",
+      "value": "Let’s",
       "type": "text",
       "group": "Contact",
       "label": "Good research starts"
     },
     "field-224": {
-      "value": "with a",
+      "value": "work",
       "type": "text",
       "group": "Contact",
       "label": "with a"
     },
     "field-225": {
-      "value": "conversation.",
+      "value": "together.",
       "type": "text",
       "group": "Contact",
       "label": "conversation."
     },
     "field-226": {
-      "value": "Working on multilingual NLP, RAG, or applied AI?",
+      "value": "Interested in multilingual AI or research collaboration?",
       "type": "text",
       "group": "Contact",
       "label": "Working on multilingual NLP, RAG, or applied AI?"
     },
     "field-227": {
-      "value": "I’d love to hear what you’re exploring.",
+      "value": "I’d be glad to hear from you.",
       "type": "text",
       "group": "Contact",
       "label": "I’d love to hear what you’re exploring."
@@ -1647,40 +1647,40 @@
     "papers": [
       {
         "id": "review",
-        "title": "Formalizing Retrieval-Augmented Generation Failure Modes and LoRA-Based Mitigation: A PRISMA-Guided Systematic Review with Pilot Closed-Passage Question Answering Experiments on Arabic and Malay",
+        "title": "Understanding why RAG fails",
         "status": "MANUSCRIPT · SYSTEMATIC REVIEW",
-        "summary": "A review of 61 studies, a four-part failure taxonomy, and preliminary closed-passage QA experiments. The proposed adapter mapping remains a hypothesis.",
-        "tags": "PRISMA review, RAG failure modes, Arabic · Malay",
+        "summary": "Reviewed 61 studies to map four types of retrieval-augmented generation failure, with Arabic and Malay pilot experiments.",
+        "tags": "",
         "category": "nlp",
         "url": "papers/rag-failure-modes-systematic-review.pdf",
         "linkLabel": "Read PDF ↗",
-        "download": true,
+        "download": false,
         "downloadLabel": "Download ↓",
         "details": "21 pages"
       },
       {
         "id": "controls",
-        "title": "An NLI Faithfulness Reward Added Nothing to LoRA Fine-Tuning of Qwen3 and T5Gemma 2 in Arabic and Malay Question Answering: A Controlled Null Result with a Length-Matched Analysis",
+        "title": "Testing faithfulness rewards in LoRA",
         "status": "MANUSCRIPT · CONTROLLED EXPERIMENTS",
-        "summary": "A controlled five-seed study finds no reliable additional benefit from the NLI reward after length matching. The work distinguishes proxy scores from answer quality.",
-        "tags": "LoRA, Faithfulness, Controlled null result",
+        "summary": "A five-seed study found no reliable added benefit from an NLI reward after controlling for answer length.",
+        "tags": "",
         "category": "nlp",
         "url": "papers/nli-faithfulness-lora-arabic-malay.pdf",
         "linkLabel": "Read PDF ↗",
-        "download": true,
+        "download": false,
         "downloadLabel": "Download ↓",
         "details": "57 pages"
       },
       {
         "id": "proposal",
-        "title": "Proxy Validity and Controlled Mitigation in Evidence-Grounded Training for Low-Resource Multilingual Retrieval-Augmented Generation: Evidence from Arabic and Malay Question Answering",
-        "status": "PHD RESEARCH PROPOSAL · NOVEMBER 2026",
-        "summary": "Three linked studies: systematic review, controlled reward evaluation, and planned mitigation with length-controlled DPO and retrieval robustness.",
-        "tags": "PhD proposal, Proxy validity, Planned mitigation",
+        "title": "Reliable multilingual AI: my PhD proposal",
+        "status": "PHD PROPOSAL · PLANNED RESEARCH",
+        "summary": "A plan to evaluate and improve evidence-grounded AI for Arabic and Malay.",
+        "tags": "",
         "category": "proposal",
         "url": "papers/research-proposal-akram-taha.pdf",
         "linkLabel": "Read PDF ↗",
-        "download": true,
+        "download": false,
         "downloadLabel": "Download ↓",
         "details": "50 pages"
       }

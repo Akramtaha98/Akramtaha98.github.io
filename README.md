@@ -85,3 +85,7 @@ Mobile refinements include larger touch controls and form text, wrapping content
 The public layout adds orbital animation around the language network, subtle section reveals, animated study transitions, and responsive cards. Use the pause control in the illustration to pause motion; this browser remembers the choice. Device reduced-motion settings take priority, and Reset visitor preferences also clears the animation preference. Canvas animation stops when hidden or offscreen.
 
 Papers can be searched by title, description, or topic alongside the category filters. Press `/` outside a form field to focus search. A compact navigation dock appears after scrolling, with research, papers, contact, and back-to-top shortcuts. All existing content remains editable in Portfolio Studio.
+
+## Focused portfolio layout
+
+The homepage now leads with Akram’s identity, selected work, and academic background. Paper cards use short descriptive headings; the linked PDFs contain the full manuscript titles. Detailed research cards, study tabs, and the illustrative lab are grouped under **Explore my research approach**. The editor still manages those entries and opens the relevant disclosure when previewing them. The default view shows every paper, with search, category controls, repeated navigation, and duplicate profile links omitted from the visual layout.

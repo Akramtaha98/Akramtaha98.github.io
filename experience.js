@@ -9,3 +9,8 @@ window.siteContentReady.finally(()=>{
  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)dock.querySelectorAll('a').forEach(link=>{if(link.getAttribute('href')===`#${entry.target.id}`)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});});},{rootMargin:'-10% 0px -65% 0px'});
  document.querySelectorAll('section[id]').forEach(section=>observer.observe(section));
 });
+// Deep links reveal optional research details before navigating.
+function revealResearchTarget(hash){let target;try{target=document.querySelector(hash);}catch{return;}if(!target)return;for(let node=target.parentElement;node;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;}
+document.addEventListener('click',event=>{const link=event.target.closest('a[href^="#"]');if(link&&link.hash.length>1)revealResearchTarget(link.hash);});
+window.addEventListener('hashchange',()=>{if(location.hash.length>1){revealResearchTarget(location.hash);try{document.querySelector(location.hash)?.scrollIntoView();}catch{}}});
+if(location.hash.length>1)revealResearchTarget(location.hash);

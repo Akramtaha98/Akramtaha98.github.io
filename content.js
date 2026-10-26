@@ -60,12 +60,12 @@
         if(collection==='studies')document.querySelectorAll('[data-study]').forEach(tab=>{if(tab.dataset.study===id)tab.click();});
         const item=Array.from(document.querySelectorAll('[data-collection-item]')).find(el=>el.dataset.collectionItem===collection&&el.dataset.recordId===id&&el.getAttribute('role')!=='tab');
         const target=Array.from(item?.querySelectorAll('[data-record-field]')||[]).find(el=>el.dataset.recordField===property)||item;
-        document.querySelectorAll('.editing-selected').forEach(el=>el.classList.remove('editing-selected'));if(target){target.classList.add('editing-selected');target.scrollIntoView({block:'center',behavior:'smooth'});}
+        document.querySelectorAll('.editing-selected').forEach(el=>el.classList.remove('editing-selected'));if(target){target.classList.add('editing-selected');for(let node=target.parentElement;node;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;target.scrollIntoView({block:'center',behavior:'smooth'});}
       }
       if (event.data?.type === 'portfolio:highlight'  && typeof event.data.key === 'string') {
         document.querySelectorAll('.editing-selected').forEach(el => el.classList.remove('editing-selected'));
         const el = Array.from(document.querySelectorAll('[data-copy],[data-url]')).find(el => el.dataset.copy === event.data.key || el.dataset.url === event.data.key);
-        if (el) { el.classList.add('editing-selected'); el.closest('[hidden]')?.removeAttribute('hidden'); el.scrollIntoView({block:'center',behavior:'smooth'}); }
+        if (el) { el.classList.add('editing-selected');for(let node=el.parentElement;node;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true; el.closest('[hidden]')?.removeAttribute('hidden'); el.scrollIntoView({block:'center',behavior:'smooth'}); }
       }
     });
     document.addEventListener('click', event => {
