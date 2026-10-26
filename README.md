@@ -79,3 +79,9 @@ The portfolio and editor support **System**, **Light**, and **Dark**. System is 
 Study selection, writing filter, and lab language are stored only in local storage. The **Privacy & preferences** section explains this and can reset visitor preferences without deleting editorial drafts. No analytics or advertising cookies have been added, and GitHub tokens remain memory-only.
 
 Mobile refinements include larger touch controls and form text, wrapping content, scrollable study/filter tabs, safe-area spacing, and accessible mobile navigation. Studio has Desktop, Tablet, Phone, and Small phone preview sizes; on narrow screens **Show page preview** opens an inline preview.
+
+## Portfolio experience
+
+The public layout adds orbital animation around the language network, subtle section reveals, animated study transitions, and responsive cards. Use the pause control in the illustration to pause motion; this browser remembers the choice. Device reduced-motion settings take priority, and Reset visitor preferences also clears the animation preference. Canvas animation stops when hidden or offscreen.
+
+Papers can be searched by title, description, or topic alongside the category filters. Press `/` outside a form field to focus search. A compact navigation dock appears after scrolling, with research, papers, contact, and back-to-top shortcuts. All existing content remains editable in Portfolio Studio.

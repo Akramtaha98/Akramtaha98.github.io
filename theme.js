@@ -28,7 +28,7 @@
     document.querySelectorAll('[data-reset-preferences]').forEach(button=>button.addEventListener('click',()=>{
       preference='system';
       try{document.cookie=`${COOKIE}=; Max-Age=0; Path=/; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;}catch{}
-      for(const key of [KEY,'portfolio-study','portfolio-filter','portfolio-language']){try{localStorage.removeItem(key);}catch{}}
+      for(const key of [KEY,'portfolio-study','portfolio-filter','portfolio-language','portfolio-motion']){try{localStorage.removeItem(key);}catch{}}
       apply();document.dispatchEvent(new CustomEvent('portfolio:reset-preferences'));
       const status=document.querySelector('[data-preferences-status]');if(status)status.textContent='Preferences reset. Appearance now follows your device.';
     }));
