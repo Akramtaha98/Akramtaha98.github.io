@@ -145,13 +145,13 @@
       "label": "AR ↔ MS ↔ EN"
     },
     "field-024": {
-      "value": "THE MULTILINGUAL SPACE",
+      "value": "Across languages",
       "type": "text",
       "group": "Introduction",
       "label": "THE MULTILINGUAL SPACE"
     },
     "field-025": {
-      "value": "Regenerate the language network",
+      "value": "Remix the language network",
       "type": "attribute",
       "group": "Introduction",
       "label": "Regenerate the language network",
@@ -213,7 +213,7 @@
       "label": "LIVE CANVAS"
     },
     "field-035": {
-      "value": "A CONCEPTUAL VIEW OF CROSS-LINGUAL RETRIEVAL",
+      "value": "Arabic · Malay · English — a conceptual network",
       "type": "text",
       "group": "Introduction",
       "label": "A CONCEPTUAL VIEW OF CROSS-LINGUAL RETRIEVAL"

@@ -9,3 +9,6 @@ No new performance claims. Existing project diagrams are conceptual previews, no
 
 ## Workflow limits
 Impeccable's context launcher failed with permission denied. The fallback read the project and references directly. No Impeccable concept-seed or QUALITY BAR artifact was generated; the recorded decimal seed is Taste Skill's actual output only. No claim of full seeded-workflow compliance is made. User approval supplied the balanced composition and code-first path.
+
+## Motion refinement
+User asked for stronger animation and a less static appearance. The focal scene is now the living Arabic–Malay–English network, using the existing conceptual canvas and adding travelling signal particles. Source-to-summary, redaction and packet travel animate within their project illustrations. Pointer tilt is bounded to project preview surfaces. Scene loops pause offscreen and when hidden; native scroll, reduced motion and the shared pause button remain. No new factual claims or dependencies.

@@ -106,5 +106,22 @@
       "Consistent SVG control and external-link icons visible in final captures.",
       "Publication status sits below titles in final paper capture."
     ]
-  }
+  },
+  "motionRefinement": {
+    "sources": [
+      "living.css",
+      "motion.js",
+      "app.js"
+    ],
+    "hero": "Visible multilingual network with travelling signals and pointer response",
+    "previews": "Summary scanning, redaction masks and packet travel; bounded fine-pointer tilt",
+    "controls": "Global pause, device reduced motion, offscreen and hidden-tab suspension",
+    "review": "ship: no material bugs in scoped changes; actual behavior checked in browser by primary task"
+  },
+  "sources": [
+    "redesign.css",
+    "living.css",
+    "motion.js",
+    "app.js"
+  ]
 }

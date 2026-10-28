@@ -97,3 +97,5 @@ Three verified public projects lead the work section: PaperBrief, Arabic–Engli
 ## Balanced redesign (October 2026)
 
 The compact introduction now leads to equally prominent Projects and Research columns on desktop, stacking on phones. `redesign.css` owns the final visual layer; `DESIGN.md` records its tokens. Erode is self-hosted in `assets/fonts/`; DM Sans is the body face. Existing conceptual project previews animate, with the pause/resume control available in the header. Manuscript/proposal status remains visible beneath paper titles. All records and publishing remain in Portfolio Studio; the new Papers button is editable under Introduction. Impeccable and Taste Skill informed the redesign; browser checks use the environment's CUA tools rather than their standalone browser inspectors.
+
+The animation refinement uses `living.css` and `motion.js`: a visible multilingual network with travelling signals, richer project process previews, bounded pointer tilt and scroll entrances. The header pause button controls the page; loops stop offscreen and in hidden tabs, and device reduced motion removes travel.
