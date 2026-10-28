@@ -12,3 +12,6 @@ Impeccable's context launcher failed with permission denied. The fallback read t
 
 ## Motion refinement
 User asked for stronger animation and a less static appearance. The focal scene is now the living Arabic–Malay–English network, using the existing conceptual canvas and adding travelling signal particles. Source-to-summary, redaction and packet travel animate within their project illustrations. Pointer tilt is bounded to project preview surfaces. Scene loops pause offscreen and when hidden; native scroll, reduced motion and the shared pause button remain. No new factual claims or dependencies.
+
+## Scroll refinement
+User requested a more attractive scrolling experience. Work headings now anchor each stream; project previews follow viewport position gently, with staged visual/title/summary reveals. The language scene recedes while leaving the viewport, and paper/background/contact entrances use their own cadence. Native scroll and shared pause remain; no runway sections or scroll capture were added.

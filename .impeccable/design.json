@@ -123,5 +123,26 @@
     "living.css",
     "motion.js",
     "app.js"
-  ]
+  ],
+  "scrollChoreography": {
+    "stickyHeadingTop": {
+      "desktop": 82,
+      "mobile": 71
+    },
+    "previewTravel": {
+      "desktop": 22,
+      "mobile": 10
+    },
+    "previewScale": [
+      0.955,
+      1
+    ],
+    "heroTravel": 32,
+    "heroScale": [
+      0.945,
+      1
+    ],
+    "imageRevealMs": 900,
+    "review": "ship; browser verified at 1440 and 390, pause clears scroll transforms"
+  }
 }

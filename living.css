@@ -27,3 +27,11 @@ html[data-scene-controller] .scene-running .project-preview *,html[data-scene-co
 @media(max-width:700px){.hero{display:block;padding-top:30px;padding-bottom:35px}.hero h1{font-size:56px;max-width:360px}.hero .network{height:280px;margin-top:30px;border-radius:12px}.network .network-top{top:16px;left:18px;right:18px}.network .network-top>span{font-size:11px}.network .ar{font-size:39px;top:25%;left:15%}.network .ms{font-size:28px;top:47%;right:8%}.network .en{font-size:25px;bottom:20%}.network .network-bottom{font-size:9px;padding:12px 16px}.network .language span{font-size:10px}.work-overview>.section{border-radius:12px}.preview-brief .preview-scene:after{left:8%;right:8%;top:12%}.brief-sheet{animation-duration:5s}.project-preview{transform:none!important}.project-preview .preview-scene{transform:none!important}}
 @media(max-width:360px){.hero h1{font-size:49px}.hero .network{height:260px}.network .ms{font-size:25px}.network .ar{font-size:36px}.network .en{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.network .language,.project-preview *,.project-preview *:after,.project-preview:after{animation:none!important}.project-preview .preview-scene{transform:none!important}.preview-brief .preview-scene:after{display:none}.publication-list article:focus-within,.contact-section:focus-within h2{transform:none}}
+/* Scroll choreography: previews follow reading position, headings anchor the work. */
+.hero .network{transform:translateY(var(--hero-travel,0px)) scale(var(--hero-scale,1));transform-origin:center center}
+.project-preview{transform:perspective(650px) translateY(var(--scroll-y,0px)) rotateX(var(--scene-x,0deg)) rotateY(var(--scene-y,0deg)) scale(var(--scroll-scale,1));transition:box-shadow .3s ease}
+.work-overview>.section>.section-heading{position:sticky;top:82px;z-index:4;background:var(--surface);padding:16px 0 18px;margin-top:-16px;margin-bottom:15px;border-radius:0}
+#publications>.section-heading{background:var(--soft)}
+@media(max-width:700px){.work-overview>.section>.section-heading{top:71px;padding:14px 0 16px;margin-top:-14px}.project-preview{transform:translateY(var(--scroll-y,0px)) scale(var(--scroll-scale,1))!important}}
+@media(prefers-reduced-motion:reduce){.hero .network,.project-preview{transform:none!important}}
+:root[data-motion=paused] .hero .network{transform:none!important}
