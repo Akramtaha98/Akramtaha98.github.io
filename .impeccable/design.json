@@ -1,0 +1,110 @@
+{
+  "name": "Balanced evidence",
+  "platform": "web",
+  "implementation": "code-first static GitHub Pages",
+  "source": "redesign.css",
+  "principles": [
+    "Compact introduction",
+    "Equal prominence for projects and papers",
+    "Real content and explicit publication status",
+    "Preserve Portfolio Studio collections and publishing"
+  ],
+  "tokens": {
+    "color": {
+      "light": {
+        "paper": "#f3f3ed",
+        "surface": "#e8eae1",
+        "soft": "#e2e7d9",
+        "ink": "#202a23",
+        "muted": "#536052",
+        "green": "#3f5a2a",
+        "accent": "#3f5a2a",
+        "line": "#d0d6c7"
+      },
+      "dark": {
+        "paper": "#18211b",
+        "surface": "#222e25",
+        "soft": "#2a382c",
+        "ink": "#eff1e8",
+        "muted": "#c1cbbd",
+        "green": "#c4dba7",
+        "accent": "#c4dba7",
+        "line": "#41503e"
+      },
+      "preview": {
+        "lightBackground": "#d4deca",
+        "lightForeground": "#274624",
+        "darkBackground": "#344b36",
+        "darkForeground": "#e2ecd9"
+      }
+    },
+    "typography": {
+      "heading": "Erode,Georgia,serif",
+      "body": "DM Sans,sans-serif",
+      "mono": "var(--body)",
+      "headingWeight": 500,
+      "heroDesktop": "clamp(58px,6.5vw,88px)",
+      "heroMobile": "56px",
+      "heroNarrow": "49px",
+      "sectionDesktop": "46px",
+      "sectionMobile": "39px",
+      "headingTracking": "-0.025em",
+      "projectTracking": "-0.02em"
+    },
+    "layout": {
+      "maxWidth": "1440px",
+      "desktopPadding": "48px",
+      "tabletPadding": "30px",
+      "mobilePadding": "20px",
+      "narrowPadding": "16px",
+      "workGap": "32px",
+      "wideWorkGap": "48px",
+      "tabletWorkGap": "20px",
+      "headerHeight": "84px",
+      "mobileHeaderHeight": "72px",
+      "breakpointsPx": [
+        360,
+        700,
+        1100,
+        1500
+      ]
+    },
+    "surface": {
+      "shadow": "none",
+      "componentRadius": "0"
+    },
+    "interaction": {
+      "focusOutline": "3px solid var(--green)",
+      "focusOffset": "5px",
+      "buttonMinHeight": "46px",
+      "workActionMinHeight": "44px"
+    }
+  },
+  "review": {
+    "disposition": "ship",
+    "inspected": [
+      "desktop.png",
+      "desktop-background.png",
+      "mobile.png",
+      "tablet-dark.png",
+      "phone-top.png",
+      "phone-projects.png",
+      "phone-papers.png",
+      "phone-contact.png",
+      "papers-final.png",
+      "desktop-final.png"
+    ],
+    "limitations": [
+      "Full-width phone recaptures resolve the earlier clipped evidence.",
+      "No independent browser or interaction test performed.",
+      "Parent reports 31 passing tests.",
+      "Impeccable launcher was unavailable (permission denied), per parent; direct-context fallback used without concept-seed or QUALITY BAR card. Seeded-workflow compliance is unverified."
+    ],
+    "materialFixes": [],
+    "scope": "Visual finish approval of scored fixes; seeded-workflow compliance remains unverified.",
+    "resolved": [
+      "Consistent SVG control and external-link icons visible in final captures.",
+      "Publication status sits below titles in final paper capture."
+    ]
+  }
+}

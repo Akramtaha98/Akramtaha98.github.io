@@ -93,3 +93,7 @@ The homepage now leads with Akram’s identity, selected work, and academic back
 ## Selected projects
 
 Three verified public projects lead the work section: PaperBrief, Arabic–English PII Redactor, and Hybrid CDN Simulator. Each has a concise description, repository link, and illustrative animated preview. These previews demonstrate the concept, not a running service or measured results. Reduced-motion and pause preferences apply. In Portfolio Studio, choose Projects to add, edit, delete, reorder, or undo changes, then publish.
+
+## Balanced redesign (October 2026)
+
+The compact introduction now leads to equally prominent Projects and Research columns on desktop, stacking on phones. `redesign.css` owns the final visual layer; `DESIGN.md` records its tokens. Erode is self-hosted in `assets/fonts/`; DM Sans is the body face. Existing conceptual project previews animate, with the pause/resume control available in the header. Manuscript/proposal status remains visible beneath paper titles. All records and publishing remain in Portfolio Studio; the new Papers button is editable under Introduction. Impeccable and Taste Skill informed the redesign; browser checks use the environment's CUA tools rather than their standalone browser inspectors.

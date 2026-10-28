@@ -87,31 +87,31 @@
       "value": "AI researcher.",
       "type": "text",
       "group": "Introduction",
-      "label": "Better answers."
+      "label": "Role: researcher"
     },
     "field-015": {
       "value": "Educator.",
       "type": "text",
       "group": "Introduction",
-      "label": "Across"
+      "label": "Role: educator"
     },
     "field-016": {
       "value": "PhD candidate.",
       "type": "text",
       "group": "Introduction",
-      "label": "languages."
+      "label": "Role: PhD candidate"
     },
     "field-017": {
       "value": "I research reliable AI for Arabic and Malay at Universiti Kebangsaan Malaysia. I also teach at the University of Technology–Iraq.",
       "type": "text",
       "group": "Introduction",
-      "label": "I’m Akram. I study whether evidence-grounded language models give an"
+      "label": "Short biography"
     },
     "field-018": {
-      "value": "See my work",
+      "value": "Explore projects",
       "type": "text",
       "group": "Introduction",
-      "label": "Explore my research"
+      "label": "Projects button"
     },
     "field-019": {
       "value": "Akram_Taha_Zeyad_Resume.pdf",
@@ -127,13 +127,13 @@
       "label": "View CV ↗"
     },
     "field-021": {
-      "value": "BASED IN MALAYSIA",
+      "value": "Based in Malaysia",
       "type": "text",
       "group": "Introduction",
       "label": "BASED IN MALAYSIA"
     },
     "field-022": {
-      "value": "ARABIC · MALAY · AI",
+      "value": "Arabic · Malay · AI",
       "type": "text",
       "group": "Introduction",
       "label": "WORKING ACROSS LANGUAGES"
@@ -286,19 +286,19 @@
       "label": "01 / RESEARCH DIRECTIONS"
     },
     "field-047": {
-      "value": "Things I’ve",
+      "value": "Projects",
       "type": "text",
       "group": "Projects",
       "label": "Three threads."
     },
     "field-048": {
-      "value": "built.",
+      "value": "",
       "type": "text",
       "group": "Projects",
       "label": "One connected question."
     },
     "field-049": {
-      "value": "Practical tools for research, language, and intelligent networks.",
+      "value": "Tools I’ve built for language, research, and intelligent networks.",
       "type": "text",
       "group": "Projects",
       "label": "When a grounding score improves, do the answers improve too? My rese"
@@ -792,13 +792,13 @@
       "label": "03 / WRITING & RESEARCH"
     },
     "field-130": {
-      "value": "Studies &",
+      "value": "Research",
       "type": "text",
       "group": "Papers",
       "label": "The research."
     },
     "field-131": {
-      "value": "findings.",
+      "value": "",
       "type": "text",
       "group": "Papers",
       "label": "Read the evidence."
@@ -1577,6 +1577,12 @@
       "type": "text",
       "group": "Search settings",
       "label": "Research university for search engines"
+    },
+    "overview-papers": {
+      "value": "Read papers",
+      "type": "text",
+      "group": "Introduction",
+      "label": "Papers button"
     }
   },
   "collections": {

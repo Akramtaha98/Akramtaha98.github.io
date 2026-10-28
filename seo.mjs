@@ -1,4 +1,4 @@
-import {getCollections,renderAllCollections} from './collections.mjs?v=projects-20261026';
+import {getCollections,renderAllCollections} from './collections.mjs?v=balanced-20261028-final';
 export const SITE_URL = 'https://akramtaha98.github.io/';
 const value = (content,key,fallback='') => content?.fields?.[key]?.value ?? fallback;
 export function escapeHTML(text) {

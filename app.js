@@ -42,7 +42,7 @@ window.siteContentReady.finally(() => {
     motionButton.disabled=motionMedia.matches;
     motionButton.setAttribute('aria-pressed',String(reduce));
     const label=motionMedia.matches?'Animations reduced by device preference':motionPaused?'Resume animations':'Pause animations';
-    motionButton.setAttribute('aria-label',label);motionButton.title=label;motionButton.textContent=reduce?'▷':'Ⅱ';
+    motionButton.setAttribute('aria-label',label);motionButton.title=label;motionButton.innerHTML=reduce?'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>':'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>';
     if(reduce){if(frame)cancelAnimationFrame(frame);frame=null;document.getAnimations().forEach(animation=>{if(animation.effect instanceof KeyframeEffect&&Number.isFinite(animation.effect.getComputedTiming().endTime)&&animation.effect.target?.closest?.('.hero,.study-panel,#demo-result'))animation.finish();});paint();}
     else if(inView&&!document.hidden)resume();
   }

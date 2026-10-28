@@ -1,4 +1,4 @@
-import {definitions,defaults} from '../collections.mjs?v=projects-20261026';
+import {definitions,defaults} from '../collections.mjs?v=balanced-20261028-final';
 const make=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
 export function renderEntrySection({name,entries,baseline,onAction,onChange,onFocus,focus,search='',documents=[]}){
  const def=definitions[name],section=make('section','entry-section');section.dataset.collection=name;
