@@ -1583,6 +1583,132 @@
       "type": "text",
       "group": "Introduction",
       "label": "Papers button"
+    },
+    "claude-101-title": {
+      "value": "Claude 101",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Claude 101 title"
+    },
+    "claude-101-verify": {
+      "value": "https://academy.claude.com/verify/2744fe785c61fd69ca78b9db1524fadb",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Claude 101 verification link"
+    },
+    "claude-101-pdf": {
+      "value": "assets/certificates/claude-academy-badge-claude-101.pdf",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Claude 101 certificate link"
+    },
+    "claude-code-101-title": {
+      "value": "Claude Code 101",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Claude Code 101 title"
+    },
+    "claude-code-101-verify": {
+      "value": "https://academy.claude.com/verify/19f4ab2a5e89039f41792a1fd3c324d4",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Claude Code 101 verification link"
+    },
+    "claude-code-101-pdf": {
+      "value": "assets/certificates/claude-academy-badge-claude-code-101.pdf",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Claude Code 101 certificate link"
+    },
+    "claude-cowork-title": {
+      "value": "Introduction to Claude Cowork",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Introduction to Claude Cowork title"
+    },
+    "claude-cowork-verify": {
+      "value": "https://academy.claude.com/verify/a138e83bded31bf43c740bfd8be6c8bd",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Introduction to Claude Cowork verification link"
+    },
+    "claude-cowork-pdf": {
+      "value": "assets/certificates/claude-academy-badge-introduction-to-claude-cowork.pdf",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Introduction to Claude Cowork certificate link"
+    },
+    "hugging-face-llms-title": {
+      "value": "Fundamentals of LLMs",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Fundamentals of LLMs title"
+    },
+    "hugging-face-llms-course": {
+      "value": "The LLM Course",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Fundamentals of LLMs course"
+    },
+    "hugging-face-llms-url": {
+      "value": "assets/certificates/hugging-face-llms.webp",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Fundamentals of LLMs certificate link"
+    },
+    "hugging-face-grpo-title": {
+      "value": "Fundamentals of GRPO",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Fundamentals of GRPO title"
+    },
+    "hugging-face-grpo-course": {
+      "value": "The Reasoning Course",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Fundamentals of GRPO course"
+    },
+    "hugging-face-grpo-url": {
+      "value": "assets/certificates/hugging-face-grpo.webp",
+      "type": "url",
+      "group": "Certificates",
+      "label": "Fundamentals of GRPO certificate link"
+    },
+    "certificates-title": {
+      "value": "Certificates",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Section title"
+    },
+    "certificates-intro": {
+      "value": "Completed courses in AI tools, language models, and reasoning.",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Section introduction"
+    },
+    "certificates-date": {
+      "value": "Issued 7 November 2026.",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Issue date"
+    },
+    "certificates-claude": {
+      "value": "Claude Academy",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Claude issuer"
+    },
+    "certificates-hugging-face": {
+      "value": "Hugging Face",
+      "type": "text",
+      "group": "Certificates",
+      "label": "Hugging Face issuer"
+    },
+    "nav-certificates": {
+      "value": "Certificates",
+      "type": "text",
+      "group": "Navigation",
+      "label": "Certificates navigation label"
     }
   },
   "collections": {
