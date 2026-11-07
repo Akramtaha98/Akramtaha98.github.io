@@ -1,6 +1,16 @@
 .certificates-section{padding-top:30px;padding-bottom:80px;scroll-margin-top:110px}
-.certificates-section .section-heading{justify-content:space-between;align-items:flex-start;gap:28px}
-.certificates-section .section-heading>p{max-width:48ch;margin:0;font-size:16px;line-height:1.6;color:var(--ink)}
+.certificates-section .section-heading{justify-content:space-between;align-items:center;gap:28px;margin:0;min-height:64px;cursor:pointer;list-style:none}
+.certificates-disclosure>summary::-webkit-details-marker{display:none}
+.certificate-toggle{display:flex;align-items:center;gap:18px;font-size:16px;color:var(--green)}
+.certificate-toggle-icon{font-size:28px;line-height:1;transition:transform .2s ease}
+.certificate-hide{display:none}
+.certificates-disclosure[open] .certificate-hide{display:inline}
+.certificates-disclosure[open] .certificate-show{display:none}
+.certificates-disclosure[open] .certificate-toggle-icon{transform:rotate(45deg)}
+.certificates-disclosure>summary:hover .certificate-toggle{text-decoration:underline;text-underline-offset:5px}
+.certificates-disclosure>summary:focus-visible{outline:3px solid var(--green);outline-offset:5px}
+.certificate-content{padding-top:28px}
+.certificate-content>p{max-width:60ch;margin:0 0 28px;font-size:16px;line-height:1.6;color:var(--ink)}
 .certificate-date{display:block;color:var(--muted)}
 .certificate-groups{display:grid;grid-template-columns:1fr 1fr;gap:64px}
 .certificate-group>h3{font:500 27px/1.2 var(--heading);letter-spacing:-.02em;margin:8px 0 26px}
@@ -15,6 +25,6 @@
 .certificate-links .text-link{display:inline-flex;align-items:center;min-height:44px;padding:4px 0;font-size:15px;color:var(--green)}
 .certificates-section a:focus-visible{outline:3px solid var(--green);outline-offset:5px}
 @media(min-width:701px) and (max-width:1100px){.certificate-groups{gap:36px}.certificate-list li{grid-template-columns:120px minmax(0,1fr);gap:16px}.certificate-list h4{font-size:20px}}
-@media(max-width:700px){.certificates-section{padding-top:0;padding-bottom:45px;scroll-margin-top:96px}.certificates-section .section-heading{display:block}.certificates-section .section-heading>p{margin-top:18px}.certificate-groups{grid-template-columns:1fr;gap:38px}.certificate-group>h3{font-size:26px;margin:4px 0 22px}.certificate-list{gap:26px}.certificate-list li{grid-template-columns:120px minmax(0,1fr);gap:18px}.certificate-list h4{font-size:20px}.certificate-links{column-gap:14px;row-gap:0}.certificate-links .text-link{font-size:14px}}
+@media(max-width:700px){.certificates-section{padding-top:0;padding-bottom:45px;scroll-margin-top:96px}.certificates-section .section-heading{display:flex;flex-wrap:wrap;gap:12px 24px}.certificate-toggle{gap:10px;font-size:15px}.certificate-groups{grid-template-columns:1fr;gap:38px}.certificate-group>h3{font-size:26px;margin:4px 0 22px}.certificate-list{gap:26px}.certificate-list li{grid-template-columns:120px minmax(0,1fr);gap:18px}.certificate-list h4{font-size:20px}.certificate-links{column-gap:14px;row-gap:0}.certificate-links .text-link{font-size:14px}}
 @media(max-width:360px){.certificate-list li{grid-template-columns:104px minmax(0,1fr);gap:14px}.certificate-list h4{font-size:18px}}
-@media(prefers-reduced-motion:reduce){.certificate-preview{transition:none}.certificate-preview:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.certificate-preview,.certificate-toggle-icon{transition:none}.certificate-preview:hover{transform:none}}
