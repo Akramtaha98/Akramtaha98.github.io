@@ -54,9 +54,6 @@ export default function CertificateGallery({ items, filters = true, limit }: Pro
             <button type="button" className={styles.thumb} onClick={() => setOpen(c)} aria-label={`View ${c.title} certificate`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={c.image} alt="" loading="lazy" />
-              <span className={styles.zoom} aria-hidden="true">
-                View
-              </span>
             </button>
             <div className={styles.body}>
               <span className={styles.issuer}>{c.issuer}</span>
@@ -66,11 +63,11 @@ export default function CertificateGallery({ items, filters = true, limit }: Pro
               <div className={styles.actions}>
                 {c.verify && (
                   <a href={c.verify} target="_blank" rel="noopener noreferrer">
-                    Verify ↗
+                    Verify online
                   </a>
                 )}
                 <a href={c.file} target="_blank" rel="noopener noreferrer">
-                  {c.file.endsWith('.pdf') ? 'PDF ↗' : 'Full size ↗'}
+                  {c.file.endsWith('.pdf') ? 'Open PDF' : 'Open image'}
                 </a>
               </div>
             </div>
@@ -90,10 +87,10 @@ export default function CertificateGallery({ items, filters = true, limit }: Pro
             <img src={open.image} alt={`${open.title} certificate`} />
             <figcaption>
               <span>
-                <strong>{open.title}</strong> · {open.issuer} · {open.issued}
+                <strong>{open.title}</strong>, {open.issuer}, {open.issued}
               </span>
-              <button type="button" onClick={() => setOpen(null)} aria-label="Close">
-                ✕
+              <button type="button" onClick={() => setOpen(null)}>
+                Close
               </button>
             </figcaption>
           </figure>

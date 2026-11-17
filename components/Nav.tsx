@@ -2,87 +2,56 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { type ComponentProps, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { site } from '@/content/site';
 import styles from './Nav.module.css';
 
-const SOLID_AFTER_PX = 28;
 const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
-const isRoute = (href: string) => href.startsWith('/');
-
-/** Route links use next/link; anchors, mailto and external URLs use a plain <a>. */
-function NavLink({ href, ...rest }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
-  return isRoute(href) ? <Link href={href} {...rest} /> : <a href={href} {...rest} />;
-}
 
 export default function Nav() {
   const pathname = normalize(usePathname() || '/');
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [raised, setRaised] = useState(false);
 
+  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > SOLID_AFTER_PX);
+    const onScroll = () => setRaised(window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
-
-  // Transparent-dark only while sitting on top of a dark banner.
-  const solid = !site.darkBannerRoutes.includes(pathname) || scrolled || open;
-  const isActive = (href: string) => {
-    if (!isRoute(href)) return false;
+  const current = (href: string) => {
     const h = normalize(href);
-    if (h === '/') return pathname === '/' || pathname === '/about';
     return pathname === h || pathname.startsWith(h + '/');
   };
 
   return (
-    <header className={styles.shell} data-solid={solid ? '1' : '0'}>
-      <nav className={styles.bar}>
-        <Link href="/" className={styles.brand}>
-          <span className={styles.dot} aria-hidden="true" />
-          <span className={styles.brandText}>{site.shortName}</span>
+    <header className={styles.shell} data-raised={raised ? '1' : undefined}>
+      <nav className={`${styles.bar} page`} aria-label="Main">
+        <Link href="/" className={styles.brand} aria-current={pathname === '/' ? 'page' : undefined}>
+          Akram Taha Zeyad
         </Link>
-
-        <ul className={styles.links}>
-          {site.nav.map((item) => (
-            <li key={item.href}>
-              <NavLink href={item.href} className={styles.link} data-on={isActive(item.href) ? '1' : '0'}>
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-
-        <NavLink href={site.navCta.href} className={styles.cta}>
-          {site.navCta.label}
-        </NavLink>
 
         <button
           type="button"
-          className={styles.burger}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          className={styles.toggle}
           aria-expanded={open}
+          aria-controls="site-menu"
           onClick={() => setOpen((o) => !o)}
         >
-          <span />
-          <span />
-          <span />
+          {open ? 'Close' : 'Menu'}
         </button>
 
-        {open && (
-          <ul className={styles.mobileMenu}>
-            {[...site.nav, site.navCta].map((item) => (
-              <li key={item.href}>
-                <NavLink href={item.href} data-on={isActive(item.href) ? '1' : '0'} onClick={() => setOpen(false)}>
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul id="site-menu" className={styles.links} data-open={open ? '1' : undefined}>
+          {site.nav.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

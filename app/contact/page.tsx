@@ -1,59 +1,40 @@
-import Button from '@/components/Button';
-import DarkBanner from '@/components/DarkBanner';
-import ScrollReveal from '@/components/ScrollReveal';
-import { Section } from '@/components/ui';
+import { PageHeader, Section } from '@/components/doc';
 import { contact, links, site } from '@/content/site';
-import styles from './contact.module.css';
 
 export const metadata = { title: 'Contact' };
 
 export default function ContactPage() {
   return (
     <>
-      <ScrollReveal />
-      <DarkBanner compact eyebrow={contact.eyebrow} title={contact.heading} lede={contact.lede}>
-        <Button href={links.email}>Email me</Button>
-        <Button href={links.cv} variant="ghost" icon="↓" download>
-          Download CV
-        </Button>
-      </DarkBanner>
+      <PageHeader title="Let's talk." lede={contact.lede}>
+        <a href={links.email} className="btn btn-primary">
+          Email {site.email}
+        </a>
+      </PageHeader>
 
-      <Section tight>
-        <div className={styles.grid}>
+      <Section title="Profiles" wide>
+        <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '18px 28px' }}>
           {contact.profiles.map((p) => (
-            <a
-              key={p.label}
-              href={p.href}
-              className={styles.card}
-              data-reveal="card"
-              target={p.href.startsWith('http') ? '_blank' : undefined}
-              rel="noopener noreferrer"
-            >
-              <span className={styles.icon} aria-hidden="true">
-                {p.icon}
-              </span>
-              <span className={styles.text}>
-                <strong>{p.label}</strong>
-                <span>{p.detail}</span>
-              </span>
-              <span className={styles.arrow} aria-hidden="true">
-                ↗
-              </span>
-            </a>
+            <li key={p.label} style={{ borderTop: '1.5px solid var(--ink)', paddingTop: 12 }}>
+              <a href={p.href} target="_blank" rel="noopener noreferrer" className="link" style={{ fontSize: '1.15rem' }}>
+                {p.label}
+              </a>
+              {p.detail && <p style={{ color: 'var(--slate)', fontSize: '0.92rem', marginTop: 4 }}>{p.detail}</p>}
+            </li>
           ))}
-        </div>
-
-        <div className={styles.affil} data-reveal="text">
-          {site.affiliations.map((a) => (
-            <p key={a.org}>
-              <strong>{a.unit}</strong>
-              <br />
-              {a.org}, {a.place}
-            </p>
-          ))}
-        </div>
+        </ul>
       </Section>
-      <div style={{ height: 72 }} />
+
+      <Section title="Where I work" wide>
+        <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 28 }}>
+          {contact.places.map((p) => (
+            <li key={p.name}>
+              <p style={{ fontWeight: 600 }}>{p.name}</p>
+              <p style={{ color: 'var(--slate)' }}>{p.where}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
     </>
   );
 }

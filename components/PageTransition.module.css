@@ -1,47 +1,57 @@
-.root {
+.sheet {
   position: fixed;
   inset: 0;
-  z-index: 99999;
-  overflow: hidden;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
   pointer-events: none;
+  transform: translateX(-101%);
+  visibility: hidden;
 }
-.root[data-state='idle'] {
-  display: none;
+.sheet[data-state='covering'],
+.sheet[data-state='covered'],
+.sheet[data-state='leaving'] {
+  visibility: visible;
 }
-/* Block clicks only while the screen is being covered. */
-.root[data-state='covering'] {
+.sheet[data-state='covering'] {
   pointer-events: auto;
+  transform: translateX(0);
+  transition: transform 0.42s cubic-bezier(0.7, 0, 0.3, 1);
 }
-
-.canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  image-rendering: pixelated;
+.sheet[data-state='covered'] {
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.sheet[data-state='leaving'] {
+  transform: translateX(101%);
+  transition: transform 0.42s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .label {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: rgba(245, 243, 255, 0.92);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--fog);
   opacity: 0;
-  transition: opacity 0.16s ease;
+  transform: translateX(-24px);
+  transition:
+    opacity 0.25s ease 0.15s,
+    transform 0.4s var(--ease) 0.1s;
 }
-.label[data-visible='1'] {
+.sheet[data-state='covering'] .label,
+.sheet[data-state='covered'] .label {
   opacity: 1;
+  transform: none;
+}
+.sheet[data-state='leaving'] .label {
+  opacity: 0;
+  transition-delay: 0s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .root {
-    display: none !important;
+  .sheet {
+    display: none;
   }
 }

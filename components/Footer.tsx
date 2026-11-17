@@ -1,35 +1,31 @@
-import Link from 'next/link';
-import { footer, site } from '@/content/site';
+import { contact, links, site } from '@/content/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
-        <div className={styles.brand}>
-          <p className={styles.name}>{site.name}</p>
-          <p className={styles.copy}>{site.role}</p>
+      <div className={`${styles.inner} page`}>
+        <div>
+          <p className={styles.prompt}>Want to work on grounded, multilingual AI together?</p>
+          <a href={links.email} className={styles.email}>
+            {site.email}
+          </a>
         </div>
-        <nav className={styles.links} aria-label="Footer">
-          {[...site.nav, site.navCta].map((l) => (
-            <Link key={l.href} href={l.href}>
-              {l.label}
-            </Link>
+        <ul className={styles.links}>
+          {contact.profiles.map((p) => (
+            <li key={p.label}>
+              <a href={p.href} target="_blank" rel="noopener noreferrer">
+                {p.label}
+              </a>
+            </li>
           ))}
-        </nav>
-        <div className={styles.links}>
-          {footer.links.map((l) => (
-            <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">
-              {l.label} ↗
-            </a>
-          ))}
-        </div>
+        </ul>
       </div>
-      <div className={styles.base}>
+      <div className={`${styles.base} page`}>
         <p>
           © {new Date().getFullYear()} {site.name}
         </p>
-        <p className={styles.note}>{footer.note}</p>
+        <p>Every answer on this site cites its source.</p>
       </div>
     </footer>
   );

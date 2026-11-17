@@ -1,27 +1,19 @@
-import Button from '@/components/Button';
-import DarkBanner from '@/components/DarkBanner';
-import ScrollReveal from '@/components/ScrollReveal';
-import { ProjectGrid } from '@/components/cards';
-import { CtaBand, Section } from '@/components/ui';
-import { contact, links, projects } from '@/content/site';
+import { A, PageHeader, ProjectRows, Section } from '@/components/doc';
+import { links, projects } from '@/content/site';
 
 export const metadata = { title: 'Projects' };
 
 export default function ProjectsPage() {
   return (
     <>
-      <ScrollReveal />
-      <DarkBanner compact eyebrow={projects.eyebrow} title={projects.heading} lede={projects.lede}>
-        <Button href={links.github} icon="↗">
-          GitHub profile
-        </Button>
-      </DarkBanner>
-
-      <Section tight>
-        <ProjectGrid items={projects.items} />
+      <PageHeader title="Things I have built." lede={projects.lede}>
+        <A href={links.github} className="btn btn-primary">
+          See my GitHub
+        </A>
+      </PageHeader>
+      <Section title="All projects" wide>
+        <ProjectRows items={projects.items} />
       </Section>
-
-      <CtaBand heading={contact.heading} body={contact.lede} primary={{ label: 'Get in touch →', href: '/contact/' }} />
     </>
   );
 }

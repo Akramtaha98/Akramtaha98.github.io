@@ -1,53 +1,40 @@
-import Button from '@/components/Button';
-import DarkBanner from '@/components/DarkBanner';
-import ScrollReveal from '@/components/ScrollReveal';
-import { InterestGrid, PaperList, ProgrammeSteps } from '@/components/cards';
-import { CtaBand, Section, SectionHeader } from '@/components/ui';
-import { contact, interests, links, papers, programme } from '@/content/site';
+import { A, Glossary, PageHeader, PaperList, Section, Steps } from '@/components/doc';
+import { interests, links, papers, programme } from '@/content/site';
 
 export const metadata = { title: 'Research' };
 
 export default function ResearchPage() {
   return (
     <>
-      <ScrollReveal />
-      <DarkBanner
-        compact
-        eyebrow="/ research"
-        title="Reliable, evidence-grounded AI."
-        lede="When a grounding score improves, do the answers improve too? My research tests that question across retrieval, fine-tuning and evaluation, with a focus on Arabic and Malay."
+      <PageHeader
+        title="Does a better score mean a better answer?"
+        lede="My research tests that question for retrieval-augmented generation in Arabic and Malay, across retrieval, fine-tuning and evaluation."
       >
-        <Button href="#papers">Read the papers</Button>
-        <Button href={links.scholar} variant="ghost" icon="↗">
-          Google Scholar
-        </Button>
-      </DarkBanner>
+        <a href="#papers" className="btn btn-primary">
+          Read the papers
+        </a>
+        <A href={links.scholar} className="btn">
+          Google Scholar profile
+        </A>
+      </PageHeader>
 
-      <Section>
-        <SectionHeader eyebrow={programme.eyebrow} heading={programme.heading} lede={programme.lede} />
-        <ProgrammeSteps steps={programme.steps} />
+      <Section title={programme.heading} lede={programme.lede} wide>
+        <Steps steps={programme.steps} />
       </Section>
 
-      <Section id="papers">
-        <SectionHeader
-          eyebrow={papers.eyebrow}
-          heading={papers.heading}
-          lede={papers.lede}
-          action={{ label: papers.scholarLabel, href: links.scholar }}
-        />
+      <Section id="papers" title={papers.heading} lede={papers.lede}>
         <PaperList items={papers.items} />
+        <h3 style={{ marginTop: 36, fontSize: '1.05rem', fontWeight: 600 }}>Other work</h3>
+        <ul style={{ marginTop: 10, display: 'grid', gap: 8, color: 'var(--slate)' }}>
+          {papers.other.map((o) => (
+            <li key={o}>{o}</li>
+          ))}
+        </ul>
       </Section>
 
-      <Section>
-        <SectionHeader eyebrow={interests.eyebrow} heading={interests.heading} />
-        <InterestGrid items={interests.items} />
+      <Section title={interests.heading}>
+        <Glossary items={interests.items} />
       </Section>
-
-      <CtaBand
-        heading="Interested in collaborating?"
-        body={contact.lede}
-        primary={{ label: 'Get in touch →', href: '/contact/' }}
-      />
     </>
   );
 }
