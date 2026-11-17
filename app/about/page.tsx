@@ -1,8 +1,2 @@
-import AboutView from '@/components/AboutView';
-import { site } from '@/content/site';
-
-export const metadata = { title: `About — ${site.name}` };
-
-export default function AboutPage() {
-  return <AboutView />;
-}
+// Kept so existing links to /about/ keep working.
+export { default } from '../page';

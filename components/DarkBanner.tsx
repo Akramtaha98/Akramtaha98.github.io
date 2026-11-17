@@ -11,12 +11,14 @@ interface DarkBannerProps {
   aside?: ReactNode;
   /** Action buttons row. */
   children?: ReactNode;
+  /** Shorter banner for inner pages. */
+  compact?: boolean;
 }
 
 /** Full-bleed dark hero with the interactive constellation background. */
-export default function DarkBanner({ eyebrow, title, kicker, lede, aside, children }: DarkBannerProps) {
+export default function DarkBanner({ eyebrow, title, kicker, lede, aside, children, compact }: DarkBannerProps) {
   return (
-    <section className={styles.band} data-dark-band>
+    <section className={`${styles.band} ${compact ? styles.compact : ''}`} data-dark-band>
       <ConstellationField />
       <div className={`${styles.inner} ${aside ? styles.split : ''}`}>
         <div className={styles.copy}>

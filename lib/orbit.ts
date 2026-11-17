@@ -4,8 +4,9 @@
  * neighbours closer than LINK_DIST with faint white lines.
  */
 import { prefersReducedMotion } from './random';
+import { getTheme } from './theme';
 
-const COLORS = ['#8b7bf0', '#4d8df0', '#21b3a0', '#f2683f', '#84b53a', '#d99320'];
+const colors = () => getTheme().palette;
 const PER_COLOR = 9;
 const LINK_DIST = 46;
 
@@ -36,11 +37,11 @@ export function startOrbit(canvas: HTMLCanvasElement): () => void {
     ctx = canvas.getContext('2d')!;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const ring = 0.4 * Math.min(w, h);
-    motes = Array.from({ length: COLORS.length * PER_COLOR }, (_, i) => ({
+    motes = Array.from({ length: colors().length * PER_COLOR }, (_, i) => ({
       angle: Math.random() * Math.PI * 2,
       radius: ring + (Math.random() - 0.2) * 22,
       speed: (0.0016 + 0.0022 * Math.random()) * (Math.random() < 0.5 ? 1 : -1),
-      color: COLORS[i % COLORS.length],
+      color: colors()[i % colors().length],
       size: 1.2 + 1.6 * Math.random(),
       phase: Math.random() * Math.PI * 2,
     }));

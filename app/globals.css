@@ -30,6 +30,11 @@
   --amber: #d99320;
   --focus: var(--violet);
 
+  /* Per-load theme accents (overridden by ThemeBoot). */
+  --accent-1: #21b3a0;
+  --accent-2: #8b7bf0;
+  --accent-3: #f2683f;
+
   /* Type */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Space Grotesk', system-ui, sans-serif;

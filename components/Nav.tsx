@@ -34,6 +34,7 @@ export default function Nav() {
   const isActive = (href: string) => {
     if (!isRoute(href)) return false;
     const h = normalize(href);
+    if (h === '/') return pathname === '/' || pathname === '/about';
     return pathname === h || pathname.startsWith(h + '/');
   };
 

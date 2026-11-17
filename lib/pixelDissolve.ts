@@ -6,7 +6,7 @@
  * near the threshold glow toward the highlight colour.
  */
 import { latticeHash, valueNoise } from './random';
-import { TRANSITION_COLORS } from './theme';
+import { getTheme } from './theme';
 
 const CELL = 13; // CSS px per dissolve cell
 
@@ -67,7 +67,7 @@ export class PixelDissolve {
    */
   paint(t: number, mode: 'cover' | 'reveal') {
     if (!this.image) return;
-    const { low, high } = TRANSITION_COLORS;
+    const { low, high } = getTheme().transition;
     const px = this.image.data;
     for (let i = 0; i < this.field.length; i++) {
       const v = this.field[i];

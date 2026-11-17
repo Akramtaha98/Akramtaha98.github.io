@@ -8,7 +8,10 @@
  * and destroy() on teardown.
  */
 import { createRng, gaussian, hexToRgb, prefersReducedMotion } from './random';
-import { BAND_BG, PALETTE } from './theme';
+import { BAND_BG, getTheme } from './theme';
+
+const FORMATIONS = ['band', 'ring', 'helix', 'scatter'] as const;
+type Formation = (typeof FORMATIONS)[number];
 
 export interface ConstellationOptions {
   /** Element that receives pointer events (usually the whole banner). */
@@ -100,6 +103,9 @@ export class Constellation {
   private cy = 0;
   private clock = 0;
   private cam = { yaw: 0, pitch: -0.26, parallax: 0, parallaxGoal: 0 };
+  private readonly formation: Formation;
+  private readonly palette: string[];
+  private readonly pitchBase: number;
   private pointer = { x: 0, y: 0, inside: false, speed: 0 };
 
   private signals: Signal[] = [];
@@ -120,12 +126,18 @@ export class Constellation {
     private readonly canvas: HTMLCanvasElement,
     options: ConstellationOptions = {},
   ) {
+    // Every construction randomises the structure, so each reload looks different.
+    const density = 0.8 + 0.4 * this.rng();
     this.opts = {
-      focusX: options.focusX ?? 0.62,
-      clusters: options.clusters ?? 5,
-      particles: options.particles ?? { desktop: 820, mobile: 380 },
-      maxSignals: options.maxSignals ?? 4,
+      focusX: options.focusX ?? 0.56 + 0.1 * this.rng(),
+      clusters: options.clusters ?? 4 + Math.floor(this.rng() * 4),
+      particles: options.particles ?? { desktop: Math.round(820 * density), mobile: Math.round(380 * density) },
+      maxSignals: options.maxSignals ?? 3 + Math.floor(this.rng() * 3),
     };
+    this.formation = FORMATIONS[Math.floor(this.rng() * FORMATIONS.length)];
+    this.palette = getTheme().palette;
+    this.pitchBase = -0.36 + 0.22 * this.rng();
+    this.cam.pitch = this.pitchBase;
     this.ctx = canvas.getContext('2d', { alpha: false })!;
     this.n = this.mobile ? this.opts.particles.mobile : this.opts.particles.desktop;
     this.cam.yaw = this.rng() * Math.PI * 2;
@@ -144,15 +156,36 @@ export class Constellation {
 
   // ───────────────────────── setup ─────────────────────────
 
+  /** Where cluster i of k sits in world space, per formation. */
+  private clusterBase(i: number, k: number): [number, number, number] {
+    const r = this.rng;
+    const t = (i + 0.5) / k;
+    switch (this.formation) {
+      case 'ring': {
+        const a = t * Math.PI * 2 + r() * 0.4;
+        return [Math.cos(a) * 330, (2 * r() - 1) * 90, Math.sin(a) * 330];
+      }
+      case 'helix': {
+        const a = t * Math.PI * 3;
+        return [(t * 2 - 1) * 400, Math.sin(a) * 120, Math.cos(a) * 220];
+      }
+      case 'scatter':
+        return [(2 * r() - 1) * 420, (2 * r() - 1) * 150, (2 * r() - 1) * 320];
+      default: // 'band'
+        return [(t * 2 - 1) * 387 + 40 * gaussian(r), (2 * r() - 1) * 133, (2 * r() - 1) * 280];
+    }
+  }
+
   private createClusters(): Cluster[] {
     const k = this.opts.clusters;
     const r = this.rng;
+    const offset = Math.floor(r() * this.palette.length);
     return Array.from({ length: k }, (_, i) => {
-      const hex = PALETTE[(i + 2) % PALETTE.length];
+      const hex = this.palette[(i + offset) % this.palette.length];
       return {
         hex,
         glow: makeGlow(hex),
-        base: [(((i + 0.5) / k) * 2 - 1) * 387 + 40 * gaussian(r), (2 * r() - 1) * 133, (2 * r() - 1) * 280],
+        base: this.clusterBase(i, k),
         amp: [40 + 70 * r(), 20 + 35 * r(), 40 + 80 * r()],
         spread: [30 + 34 * r(), 18 + 20 * r(), 30 + 34 * r()],
         freq: 5e-5 + 6e-5 * r(),
@@ -382,7 +415,7 @@ export class Constellation {
     const T = this.clock;
     const cam = this.cam;
     cam.yaw += 32e-6 * dt;
-    cam.pitch = -0.26 + 0.07 * Math.sin(4e-5 * T);
+    cam.pitch = this.pitchBase + 0.07 * Math.sin(4e-5 * T);
     cam.parallax += (cam.parallaxGoal - cam.parallax) * Math.min(1, 0.003 * dt);
 
     for (const c of this.clusters) {

@@ -28,7 +28,8 @@
   z-index: 3;
   height: 2px;
   opacity: 0.85;
-  background: linear-gradient(90deg, var(--teal), var(--blue) 34%, var(--violet) 58%, var(--coral));
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
+  transition: background 0.4s ease;
 }
 
 .inner {
@@ -127,4 +128,12 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Inner pages: shorter band, slightly smaller title. */
+.compact .inner {
+  padding: 56px var(--gutter) 48px;
+}
+.compact .title {
+  font-size: clamp(32px, 4.6vw, 54px);
 }

@@ -11,7 +11,7 @@
   position: absolute;
   inset: -16px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--teal), var(--blue), var(--violet), var(--coral), var(--amber), var(--teal));
+  background: conic-gradient(from 0deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
   filter: blur(15px);
   opacity: 0.5;
   animation: spin 22s linear infinite;

@@ -3,19 +3,21 @@ import type { ReactNode } from 'react';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import PageTransition from '@/components/PageTransition';
+import ThemeBoot from '@/components/ThemeBoot';
 import { site } from '@/content/site';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://akramtaha98.github.io'),
-  title: `${site.name} — AI Researcher`,
+  metadataBase: new URL(site.url),
+  title: { default: `${site.name} | AI Researcher`, template: `%s | ${site.name}` },
   description: site.metaDescription,
   icons: { icon: '/favicon.svg' },
   openGraph: {
     type: 'profile',
     url: '/',
-    title: `${site.name} — AI Researcher`,
+    title: `${site.name} | AI Researcher`,
     description: site.metaDescription,
+    images: [{ url: '/images/akram-photo.webp', width: 1200, height: 936, alt: site.name }],
   },
 };
 
@@ -33,6 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="stylesheet" href={FONTS} />
       </head>
       <body>
+        <ThemeBoot />
         <PageTransition />
         <Nav />
         <main>{children}</main>
