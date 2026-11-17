@@ -1,0 +1,189 @@
+.shell {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  transition:
+    background 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.bar {
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.brandText {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 13.5px;
+}
+.link[data-on='1'] {
+  font-weight: 500;
+}
+
+.cta {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 7px;
+}
+
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+}
+.burger span {
+  width: 18px;
+  height: 2px;
+}
+
+.brand,
+.dot,
+.link,
+.cta,
+.burger,
+.burger span {
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 14px 26px -18px rgba(28, 25, 23, 0.5);
+}
+.mobileMenu a {
+  display: block;
+  padding: 11px var(--gutter);
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.mobileMenu a[data-on='1'] {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .links,
+  .cta {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* ── Solid (light, frosted) state ── */
+.shell[data-solid='1'] {
+  background: hsla(40, 23%, 97%, 0.85);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.shell[data-solid='1'] .brand {
+  color: var(--ink);
+}
+.shell[data-solid='1'] .dot {
+  background: var(--navy);
+}
+.shell[data-solid='1'] .link {
+  color: var(--ink-3);
+}
+.shell[data-solid='1'] .link:hover,
+.shell[data-solid='1'] .link[data-on='1'] {
+  color: var(--navy);
+}
+.shell[data-solid='1'] .cta {
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--navy);
+}
+.shell[data-solid='1'] .cta:hover {
+  background: var(--navy-2);
+  border-color: var(--navy-2);
+}
+.shell[data-solid='1'] .burger {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.shell[data-solid='1'] .burger span {
+  background: var(--ink);
+}
+
+/* ── Transparent-dark state (over the banner) ── */
+.shell[data-solid='0'] {
+  background: var(--band);
+  border-bottom: 1px solid transparent;
+}
+.shell[data-solid='0'] .brand {
+  color: var(--band-ink);
+}
+.shell[data-solid='0'] .dot {
+  background: var(--teal);
+  box-shadow: 0 0 12px rgba(33, 179, 160, 0.9);
+}
+.shell[data-solid='0'] .link {
+  color: rgba(226, 222, 245, 0.82);
+}
+.shell[data-solid='0'] .link:hover,
+.shell[data-solid='0'] .link[data-on='1'] {
+  color: #fff;
+}
+.shell[data-solid='0'] .cta {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.shell[data-solid='0'] .cta:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.shell[data-solid='0'] .burger {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+.shell[data-solid='0'] .burger span {
+  background: #fff;
+}

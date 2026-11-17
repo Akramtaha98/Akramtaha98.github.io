@@ -1,11 +1,5 @@
-.qa/
-GATES.md
-SEO_GATES.md
-THEME_GATES.md
-.DS_Store
-COLLECTION_GATES.md
-
-UX_GATES.md
-
-.taste-skill/
-.impeccable/review/
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
