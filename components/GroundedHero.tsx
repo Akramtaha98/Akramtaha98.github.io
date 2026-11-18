@@ -4,10 +4,14 @@ import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { hero, site, type Lang, type Source } from '@/content/site';
 import styles from './GroundedHero.module.css';
+import TokenField from './TokenField';
 
 const LANGS: Lang[] = ['en', 'ar', 'ms'];
 const LANG_NAME: Record<Lang, string> = { en: 'English', ar: 'Arabic', ms: 'Malay' };
 const TYPE_MS = 38;
+/** How long a finished answer stays before the next language is asked. */
+const DWELL_MS = 7000;
+const TICK_MS = 100;
 const STORAGE_KEY = 'hero-last-lang';
 
 const reducedMotion = () =>
@@ -53,6 +57,11 @@ export default function GroundedHero() {
   const [armed, setArmed] = useState(false);
   const [active, setActive] = useState<number | null>(null);
   const [threads, setThreads] = useState<Thread[]>([]);
+  const [progress, setProgress] = useState(0); // 0..1 toward the next question
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(false);
+  const visibleRef = useRef(true);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const gridRef = useRef<HTMLDivElement>(null);
   const answerRef = useRef<HTMLDivElement>(null);
@@ -88,6 +97,46 @@ export default function GroundedHero() {
     return () => window.clearTimeout(t);
   }, [typed, question.text]);
 
+  // Loop: when an answer has finished, wait, then ask in the next language.
+  // Pauses while the visitor is pointing at or focused inside the hero,
+  // when the hero is off screen, and when the tab is hidden.
+  useEffect(() => {
+    if (!armed || reducedMotion()) return;
+    const sequenceMs = Array.from(hero.questions[lang].text).length * TYPE_MS + 150 + 3 * 140 + 250 + 3 * 480 + 1100;
+    const started = Date.now();
+    let elapsed = 0;
+    setProgress(0);
+    const id = window.setInterval(() => {
+      if (Date.now() - started < sequenceMs) return;
+      if (pausedRef.current || !visibleRef.current || document.hidden) return;
+      elapsed += TICK_MS;
+      setProgress(Math.min(1, elapsed / DWELL_MS));
+      if (elapsed >= DWELL_MS) {
+        window.clearInterval(id);
+        ask(LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]);
+      }
+    }, TICK_MS);
+    // Re-measure once cards have settled after their entrance.
+    const settle = window.setTimeout(() => measureRef.current(), sequenceMs - 900);
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(settle);
+    };
+  }, [armed, run, lang, ask]);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => (visibleRef.current = e.isIntersecting), { threshold: 0.2 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const hold = (on: boolean) => {
+    pausedRef.current = on;
+    setPaused(on);
+  };
+
   // Draw threads from each citation (at the answer column's edge) to its source card.
   const measure = useCallback(() => {
     const grid = gridRef.current;
@@ -111,6 +160,8 @@ export default function GroundedHero() {
     }
     setThreads(next);
   }, []);
+  const measureRef = useRef(measure);
+  measureRef.current = measure;
 
   useEffect(() => {
     measure();
@@ -133,6 +184,11 @@ export default function GroundedHero() {
 
   return (
     <section
+      ref={sectionRef}
+      onPointerEnter={() => hold(true)}
+      onPointerLeave={() => hold(false)}
+      onFocusCapture={() => hold(true)}
+      onBlurCapture={() => hold(false)}
       className={`${styles.hero} page`}
       data-armed={armed ? '1' : undefined}
       aria-labelledby="hero-answer"
@@ -143,6 +199,8 @@ export default function GroundedHero() {
         } as React.CSSProperties
       }
     >
+      <TokenField />
+
       {/* ── The question ── */}
       <div className={styles.ask}>
         <div className={styles.query} dir={lang === 'ar' ? 'rtl' : 'ltr'} lang={lang}>
@@ -155,6 +213,7 @@ export default function GroundedHero() {
             <span className={styles.caret} data-typing={typing ? '1' : '0'} aria-hidden="true" />
           </span>
         </div>
+        <div className={styles.switcher}>
         <div className={styles.langs} role="group" aria-label="Ask this question in another language">
           {LANGS.map((l) => (
             <button
@@ -167,6 +226,17 @@ export default function GroundedHero() {
               {hero.questions[l].label}
             </button>
           ))}
+        </div>
+        <p className={styles.cycle} aria-live="off" data-paused={paused ? '1' : undefined}>
+          <span className={styles.cycleBar}>
+            <span style={{ transform: `scaleX(${progress})` }} />
+          </span>
+          <span>
+            {paused
+              ? 'Paused while you read'
+              : `Next, asking in ${LANG_NAME[LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]]}`}
+          </span>
+        </p>
         </div>
       </div>
 

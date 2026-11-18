@@ -1,5 +1,6 @@
 import CertificateGallery from '@/components/CertificateGallery';
 import GroundedHero from '@/components/GroundedHero';
+import TermRibbon from '@/components/TermRibbon';
 import { Glossary, Notes, PaperList, ProjectRows, Prose, Section, Steps } from '@/components/doc';
 import { about, certificates, interests, papers, programme, projects } from '@/content/site';
 
@@ -7,6 +8,7 @@ export default function HomePage() {
   return (
     <>
       <GroundedHero />
+      <TermRibbon />
 
       <Section id="about" title={about.heading} notes={<Notes items={about.notes} />}>
         <Prose paragraphs={about.paragraphs} />

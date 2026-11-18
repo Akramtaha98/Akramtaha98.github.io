@@ -129,11 +129,36 @@
 
 /* ───────── Steps (a real sequence) ───────── */
 .steps {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  counter-reset: step;
   border-top: 1.5px solid var(--ink);
+}
+/* A pulse travels the sequence in a loop; each step lights as it passes. */
+.steps::after {
+  content: '';
+  position: absolute;
+  top: -5.5px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cite);
+  box-shadow: 0 0 0 5px var(--cite-soft);
+  animation: travel 7.5s linear infinite;
+}
+@keyframes travel {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 10px);
+  }
+}
+.steps:hover::after,
+.steps:hover .stepNo {
+  animation-play-state: paused;
 }
 .steps > li {
   position: relative;
@@ -152,6 +177,29 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
+  color: #a9b4d6;
+  transform-origin: left bottom;
+  animation: stepLit 7.5s linear infinite;
+}
+.steps > li:nth-child(2) .stepNo {
+  animation-delay: 2.5s;
+}
+.steps > li:nth-child(3) .stepNo {
+  animation-delay: 5s;
+}
+@keyframes stepLit {
+  0%,
+  30% {
+    color: var(--cite);
+    transform: scale(1.08);
+  }
+  38%,
+  100% {
+    color: #a9b4d6;
+    transform: none;
+  }
+}
+.steps > li:hover .stepNo {
   color: var(--cite);
 }
 .stepLabel {
@@ -340,6 +388,13 @@
   }
   .steps {
     grid-template-columns: 1fr;
+  }
+  .steps::after {
+    display: none;
+  }
+  .stepNo {
+    animation: none;
+    color: var(--cite);
   }
   .steps > li,
   .steps > li + li {

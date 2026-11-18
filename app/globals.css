@@ -45,6 +45,7 @@ html {
 }
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--fog);
   color: var(--ink);
   font-family: var(--font-body);
@@ -141,5 +142,24 @@ button {
     animation-duration: 0.001ms !important;
     animation-delay: 0ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* Full-bleed interactive token field behind the hero; faint behind the copy. */
+.token-field {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100%;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 38%, #000 66%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 38%, #000 66%);
+}
+@media (max-width: 900px) {
+  .token-field {
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
   }
 }
