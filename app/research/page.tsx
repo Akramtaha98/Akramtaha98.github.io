@@ -1,4 +1,5 @@
-import { A, Glossary, PageHeader, PaperList, Section, Steps } from '@/components/doc';
+import Stepper from '@/components/Stepper';
+import { A, Glossary, PageHeader, PaperList, Section } from '@/components/doc';
 import { interests, links, papers, programme } from '@/content/site';
 
 export const metadata = { title: 'Research' };
@@ -19,7 +20,7 @@ export default function ResearchPage() {
       </PageHeader>
 
       <Section title={programme.heading} lede={programme.lede} wide>
-        <Steps steps={programme.steps} />
+        <Stepper steps={programme.steps} />
       </Section>
 
       <Section id="papers" title={papers.heading} lede={papers.lede}>

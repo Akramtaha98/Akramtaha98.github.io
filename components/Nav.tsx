@@ -30,6 +30,15 @@ export default function Nav() {
     <header className={styles.shell} data-raised={raised ? '1' : undefined}>
       <nav className={`${styles.bar} page`} aria-label="Main">
         <Link href="/" className={styles.brand} aria-current={pathname === '/' ? 'page' : undefined}>
+          <svg className={styles.mark} viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#FFE066" />
+            <g fill="none" stroke="#121A2E" strokeWidth="6" strokeLinejoin="round" strokeLinecap="round">
+              <path d="M9 50 L19.5 16 L30 50" />
+              <path d="M13.5 38 H25.5" />
+              <path d="M35 24 H52 L35 50 H53" />
+            </g>
+            <circle cx="52" cy="12" r="6.5" fill="#2747D9" />
+          </svg>
           Akram Taha Zeyad
         </Link>
 

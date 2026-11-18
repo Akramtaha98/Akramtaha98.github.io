@@ -110,34 +110,6 @@ export function Glossary({ items }: { items: { term: string; def: string }[] }) 
   );
 }
 
-/** A real sequence, so it is numbered. */
-export function Steps({
-  steps,
-}: {
-  steps: { label: string; status: string; title: string; summary: string; href: string; linkLabel: string }[];
-}) {
-  return (
-    <ol className={styles.steps}>
-      {steps.map((s, i) => (
-        <li key={s.label}>
-          <span className={styles.stepNo} aria-hidden="true">
-            {i + 1}
-          </span>
-          <p className={styles.stepLabel}>
-            {s.label}
-            <span>{s.status}</span>
-          </p>
-          <h3>{s.title}</h3>
-          <p className={styles.stepText}>{s.summary}</p>
-          <A href={s.href} className="link">
-            {s.linkLabel}
-          </A>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
 export function PaperList({ items }: { items: Paper[] }) {
   return (
     <ul className={styles.papers}>

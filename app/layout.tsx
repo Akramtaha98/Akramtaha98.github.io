@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} | AI researcher`, template: `%s | ${site.name}` },
   description: site.metaDescription,
-  icons: { icon: '/favicon.svg' },
   openGraph: {
     type: 'profile',
     url: '/',

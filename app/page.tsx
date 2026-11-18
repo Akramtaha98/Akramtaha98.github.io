@@ -1,7 +1,8 @@
+import Stepper from '@/components/Stepper';
 import CertificateGallery from '@/components/CertificateGallery';
 import GroundedHero from '@/components/GroundedHero';
 import TermRibbon from '@/components/TermRibbon';
-import { Glossary, Notes, PaperList, ProjectRows, Prose, Section, Steps } from '@/components/doc';
+import { Glossary, Notes, PaperList, ProjectRows, Prose, Section } from '@/components/doc';
 import { about, certificates, interests, papers, programme, projects } from '@/content/site';
 
 export default function HomePage() {
@@ -19,7 +20,7 @@ export default function HomePage() {
       </Section>
 
       <Section id="programme" title={programme.heading} lede={programme.lede} wide>
-        <Steps steps={programme.steps} />
+        <Stepper steps={programme.steps} />
       </Section>
 
       <Section id="papers" title={papers.heading} more={{ label: 'All research', href: '/research/' }}>

@@ -1,0 +1,97 @@
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 28px;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 6px;
+  cursor: default;
+}
+
+/* Each step owns a segment of the progress rule. */
+.track {
+  position: relative;
+  display: block;
+  height: 3px;
+  margin-bottom: 14px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--cite);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.step[data-state='done'] .fill {
+  transform: scaleX(1);
+}
+.steps[data-auto] .step[data-state='current'] .fill {
+  animation-name: fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+/* Without auto-advance (reduced motion) the current step is simply full. */
+.steps:not([data-auto]) .step[data-state='current'] .fill {
+  transform: scaleX(1);
+}
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.no {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  transition: color 0.25s ease;
+}
+.step[data-state='current'] .no {
+  color: var(--cite);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+.label span {
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--slate);
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.text {
+  font-size: 0.97rem;
+  color: var(--slate);
+}
+.step :global(.link) {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

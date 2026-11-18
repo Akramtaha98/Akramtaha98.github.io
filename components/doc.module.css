@@ -127,108 +127,6 @@
   color: var(--slate);
 }
 
-/* ───────── Steps (a real sequence) ───────── */
-.steps {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1.5px solid var(--ink);
-}
-/* A pulse travels the sequence in a loop; each step lights as it passes. */
-.steps::after {
-  content: '';
-  position: absolute;
-  top: -5.5px;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--cite);
-  box-shadow: 0 0 0 5px var(--cite-soft);
-  animation: travel 7.5s linear infinite;
-}
-@keyframes travel {
-  from {
-    left: 0;
-  }
-  to {
-    left: calc(100% - 10px);
-  }
-}
-.steps:hover::after,
-.steps:hover .stepNo {
-  animation-play-state: paused;
-}
-.steps > li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 22px 24px 4px 0;
-}
-.steps > li + li {
-  padding-left: 24px;
-  border-left: 1px solid var(--line);
-}
-.stepNo {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: #a9b4d6;
-  transform-origin: left bottom;
-  animation: stepLit 7.5s linear infinite;
-}
-.steps > li:nth-child(2) .stepNo {
-  animation-delay: 2.5s;
-}
-.steps > li:nth-child(3) .stepNo {
-  animation-delay: 5s;
-}
-@keyframes stepLit {
-  0%,
-  30% {
-    color: var(--cite);
-    transform: scale(1.08);
-  }
-  38%,
-  100% {
-    color: #a9b4d6;
-    transform: none;
-  }
-}
-.steps > li:hover .stepNo {
-  color: var(--cite);
-}
-.stepLabel {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-}
-.stepLabel span {
-  font-weight: 400;
-  font-size: 0.88rem;
-  color: var(--slate);
-}
-.steps h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-.stepText {
-  font-size: 0.97rem;
-  color: var(--slate);
-}
-.steps :global(.link) {
-  margin-top: auto;
-  padding-top: 6px;
-  font-size: 0.95rem;
-}
-
 /* ───────── Papers ───────── */
 .papers > li {
   padding: 22px 0;
@@ -385,22 +283,6 @@
   }
   .sectionHead {
     position: static;
-  }
-  .steps {
-    grid-template-columns: 1fr;
-  }
-  .steps::after {
-    display: none;
-  }
-  .stepNo {
-    animation: none;
-    color: var(--cite);
-  }
-  .steps > li,
-  .steps > li + li {
-    padding: 20px 0;
-    border-left: 0;
-    border-bottom: 1px solid var(--line);
   }
   .glossary > div,
   .timeline > li {
